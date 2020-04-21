@@ -4,6 +4,11 @@
 	--bleu: #12CDD4;
 	--gris-clair: #A3A3A3;
 	--gris-foncé: #5E5E5E;
+	box-sizing: border-box
+}
+
+strong{
+	font-weight: bold;
 }
 
 body{
@@ -87,6 +92,7 @@ section h1 {
 	border-color: var(--orange);
 }
 
+
 .titreFormation{
 	display: flex;
 	align-content: flex-start;
@@ -118,7 +124,6 @@ section h1 {
 }
 
 .panel li {
-	color: var(--gris-foncé);
 	list-style-type: none;
 }
 
@@ -128,13 +133,113 @@ section h1 {
 	justify-content: space-between;
 	align-items: center;
 	background-color: white;
+	color: var(--gris-foncé);
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
 }
-
+.panel:first-child{
+	align-self: flex-start;
+	background-color: blueviolet;
+}
 .panel img{
-	height: 200px;
-	width: 200px;
+	height: auto;
+	width: 300px;
 }
 
+#creation article{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.explicationSlide {
+	width: auto;
+	background-color: blue;
+}
+
+/* Slideshow container */
+.slideshow-container {
+	width: 300px;
+	position: relative;
+}
+
+/* Hide the images by default */
+.slides img {
+	width: 100px;
+	height: 200px;
+	display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--orange);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: var(--gris-clair);
+}
+
+/* Caption text */
+.text {
+  color: var(--orange);
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	right: 0;
+	background-color: var(--gris-clair);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--gris-foncé);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

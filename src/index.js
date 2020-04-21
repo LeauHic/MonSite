@@ -22,23 +22,54 @@ function age()
 
 //attribution au div "age" de l'age calculé
 document.querySelector("#age").textContent = age();
+
+
 //Gestion de l'affichage des panel de la partie "formations"
 let accordeon = document.querySelectorAll(".titreFormation");
-let arrow = document.querySelectorAll(".arrow");
 
 for (let i = 0; i < accordeon.length; i++) {
-
-	accordeon[i].addEventListener("click", function(){
-	/* Coche ou décoche la propriété "active" sur la classe selectionnée*/
+	
+	accordeon[i].addEventListener("click", function () {
+		/* Toogle sur la class"active" des images flèches*/
 		this.firstElementChild.classList.toggle("arrowActive");
 
-		/* Toggle between hiding and showing the active panel */
+		/* Toogle*/
 		let panel = this.nextElementSibling;
 		if (panel.style.maxHeight) {
 			panel.style.maxHeight = null;
 		}
 		else {
 			panel.style.maxHeight = panel.scrollHeight + "px";
-		}
+		}		
 	});
 };
+
+//Caroussel
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	var i;
+	var slides = document.getElementsByClassName("slide");
+	var dots = document.getElementsByClassName("dot");
+	if (n > slides.length) { slideIndex = 1 }
+	if (n < 1) { slideIndex = slides.length }
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += " active";
+}

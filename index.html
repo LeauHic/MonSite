@@ -13,11 +13,13 @@
 			<div id="dateDuJour"></div>
 
 		</div>
-		<li><a href="#moi">Moi</a></li>
-		<li><a href="#parcours">Mon parcours</a></li>
-		<li><a href="#formations">Mes formations</a></li>
-		<li><a href="#creation">Mes créations</a></li>
-		<li><a href="#contact">Faisons-nous un café</a></li>
+		<ul>
+			<li><a href="#moi">Moi</a></li>
+			<li><a href="#parcours">Mon parcours</a></li>
+			<li><a href="#formations">Mes formations</a></li>
+			<li><a href="#creation">Mes créations</a></li>
+			<li><a href="#contact">Faisons-nous un café</a></li>
+		</ul>
 	</nav>
 	<div class="main">
 		<header>
@@ -35,9 +37,36 @@
 			<section id="parcours">
 				<h1>PARCOURS</h1>
 				<p>
-					Parcours</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-					ParcoursParcoursParcoursParcoursParcoursParcoursParcoursParcoursParcours
+					Parcours
 				</p>
+			</section>
+			<section id="creation">
+				<h1>MES CREATIONS</h1>
+				<article>
+					<div class="slideshow-container">
+						<div class="slide fade">
+							<img src="img/slide1.jpg">
+							<div class="text">Caption Text</div>
+						</div>
+
+						<div class="slide fade">
+							<img src="img/slide2.jpg">
+							<div class="text">Caption Two</div>
+						</div>
+
+						<div class="slide fade">
+							<img src="img/slide3.jpg">
+							<div class="text">Caption Three</div>
+						</div>
+
+						<!-- Next and previous buttons -->
+						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					</div>
+					<div class="explicationSlide">
+						<p>Coucou</p>
+					</div>
+				</article>
 			</section>
 			<section id="formations">
 				<h1>FORMATIONS</h1>
@@ -46,40 +75,46 @@
 					<button class="accordeon">[En cours] Titre de niveau III Développeur informatique</button>
 				</div>
 				<div class="panel">
-					<p>
-						<ul>
-							<li>CESI</li>
-							<li>Rouen (76), Seine-et-Marne</li>
-						</ul>
-
-					</p>
-                    <p>C# C++</p>
-					<p><img src="img/rouen.jpg" title="Ceci n'est pas Strasbourg" alt="Rouen" /></p>
+					<ul>
+						<li><strong>CESI</strong></li>
+						<li>Formation par alternance</li>
+						<li>Rouen (76), Seine-et-Marne</li>
+					</ul>
+					<ul>
+						<li>Languages de programmation applicatifs<br>(Python, Java, C#, .NET)</li>
+						<li>Languages web<br>(HTML5/CSS3, Javascript, PHP</li>
+					</ul>
+					<img src="img/rouen.jpg" title="Ceci n'est pas Strasbourg" alt="Rouen" />
 				</div>
 				<div class="titreFormation">
 					<img class="arrow" src="img/arrow.svg" alt="arrow" />
 					<button class="accordeon">Ingénieur Emballage et Conditionnement</button>
 				</div>
 				<div class="panel">
-					<p>
-						<ul>
-							<li>EsiReims</li>
-							<li>Reims (51), Champagne Ardenne</li>
-						</ul>
-					</p>
-					<p><img src="img/reims.jpg" title="L'effet des bulles de champagnes..." alt="Reims" /></p>
+					<ul>
+						<li><strong>EsiReims</strong></li>
+						<li>Formation Continue (dont 3 stage de 4mois)</li>
+						<li>Reims (51), Champagne Ardenne</li>
+					</ul>
+					<ul>
+						<li>Technique de l'ingénieur<br>(gestion projets, management, résolutions problèmes)</li>
+						<li>Spécialité<br>(connaissances des matériaux, techniques d'impression)</li>
+					</ul>
+					<img src="img/reims.jpg" title="L'effet des bulles de champagnes..." alt="Reims" />
 				</div>
 				<div class="titreFormation">
 					<img class="arrow" src="img/arrow.svg" alt="arrow" />
 					<button class="accordeon">DUT Chimie</button>
 				</div>
 				<div class="panel">
-					<p>
-						<ul>
-							<li>Unniversité Paul Sabatier</li>
-							<li>Castres (81), Tarn</li>
-						</ul>
-					</p>
+					<ul>
+						<li><strong>Unniversité Paul Sabatier</strong></li>
+						<li>Formation continue (dont 1 stage de 3mois)</li>
+						<li>Castres (81), Tarn</li>
+					</ul>
+					<ul>
+						<li>Rigueur de déroulement d'un protocole</li>
+					</ul>
 					<p><img src="img/castres.jpg" title="Sous le pont Neuf coule l'Agout" alt="Castres" /></p>
 				</div>
 				<div class="titreFormation">
@@ -87,27 +122,17 @@
 					<button class="accordeon">Baccalauréat scientifique</button>
 				</div>
 				<div class="panel">
-					<p>
-						<ul>
-							<li>Lycée Jules Michelet</li>
-							<li>Montauban (82), Tarn-et-Garonne</li>
-						</ul>
-					</p>
+					<ul>
+						<li><strong>Lycée Jules Michelet</strong></li>
+						<li>Montauban (82), Tarn-et-Garonne</li>
+					</ul>
 					<p><img src="img/montauban.jpg" title="On ne devrait jamais quitter Montauban" alt="Montauban" /></p>
 				</div>
-			</section>
-			<section id="creation">
-				<h1>MES CREATIONS</h1>
-				<p>
-					Créations</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-					CréationsCréationsCréationsCréationsCréationsCréationsCréationsCréationsCréationsCréations
-				</p>
 			</section>
 			<section id="contact">
 				<h1>RENCONTRONS-NOUS !</h1>
 				<p>
-					Café</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-					CaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCafé
+					Café
 				</p>
 			</section>
 			<footer></footer>

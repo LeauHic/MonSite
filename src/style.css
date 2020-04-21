@@ -1,10 +1,12 @@
-
 * {
 	--orange: #F7C024;
 	--bleu: #12CDD4;
 	--gris-clair: #A3A3A3;
 	--gris-foncé: #5E5E5E;
 	box-sizing: border-box
+}
+html, body{
+	margin: 0;
 }
 
 strong{
@@ -14,8 +16,6 @@ strong{
 body{
 	display: flex;
 	flex-direction: row;
-	width: auto;
-	
 }
 
 nav {
@@ -223,23 +223,23 @@ section h1 {
 }
 
 .active, .dot:hover {
-  background-color: var(--gris-foncé);
+	background-color: var(--gris-foncé);
 }
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+	from {opacity: .4}
+	to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+	from {opacity: .4}
+	to {opacity: 1}
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Portfolio Loïck Brouard</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="src/style.css">
 	
 </head>
 <body>
@@ -13,23 +13,106 @@
 			<div id="dateDuJour"></div>
 
 		</div>
-		<li><a href="#Moi">Moi</a></li>
-		<li><a href="#Parcours">Mon parcours</a></li>
-		<li><a href="#Creation">Mes créations</a></li>
-		<li><a href="#Contact">Faisons-nous un café</a></li>
+		<li><a href="#moi">Moi</a></li>
+		<li><a href="#parcours">Mon parcours</a></li>
+		<li><a href="#formations">Mes formations</a></li>
+		<li><a href="#creation">Mes créations</a></li>
+		<li><a href="#contact">Faisons-nous un café</a></li>
 	</nav>
 	<div class="main">
-		<header></header>
-		<section class="Moi">
-			<h1>LOÏCK BROUARD</h1>
-			<p>Alternant Développeur informatique, <span id="age"></span> ans.</p>
-			<p><a class="logo" href="#" ><img src="img/logoGitHub.png" alt="gitHub" title="Mon gitHub"/></a><a class="logo" href="#" ><img src="img/logoLinkedIn.png" alt="linkedIn" title="Mon LinkedIn"/></a></p>>
-		</section>
-		<section class="Parcours"></section>
-		<section class="Creation"></section>
-		<section class="Contact"></section>
-		<footer></footer>
+		<header>
+			<div id="moi">
+				<h1>LOÏCK BROUARD</h1>
+				<p>Alternant Développeur informatique, <span id="age"></span> ans.</p>
+				<p>
+					<a class="github" href="#"><img src="img/github.png" alt="gitHub" title="Les projets finis et en cours" /></a>
+					<a class="linkedin" href="#"><img src="img/linkedin.png" alt="linkedIn" title="Connectons-nous !" /></a>
+					<a class="CV" href="#"><img src="img/CV.png" alt="CV Loïck Brouard" title="Le format classique, mais imprimable :)" /></a>
+				</p>
+			</div>
+		</header>
+		<div class="pageMobile">
+			<section id="parcours">
+				<h1>PARCOURS</h1>
+				<p>
+					Parcours</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+					ParcoursParcoursParcoursParcoursParcoursParcoursParcoursParcoursParcours
+				</p>
+			</section>
+			<section id="formations">
+				<h1>FORMATIONS</h1>
+				<div class="titreFormation">
+					<img class="arrow" src="img/arrow.svg" alt="arrow" />
+					<button class="accordeon">[En cours] Titre de niveau III Développeur informatique</button>
+				</div>
+				<div class="panel">
+					<p>
+						<ul>
+							<li>CESI</li>
+							<li>Rouen (76), Seine-et-Marne</li>
+						</ul>
+
+					</p>
+                    <p>C# C++</p>
+					<p><img src="img/rouen.jpg" title="Ceci n'est pas Strasbourg" alt="Rouen" /></p>
+				</div>
+				<div class="titreFormation">
+					<img class="arrow" src="img/arrow.svg" alt="arrow" />
+					<button class="accordeon">Ingénieur Emballage et Conditionnement</button>
+				</div>
+				<div class="panel">
+					<p>
+						<ul>
+							<li>EsiReims</li>
+							<li>Reims (51), Champagne Ardenne</li>
+						</ul>
+					</p>
+					<p><img src="img/reims.jpg" title="L'effet des bulles de champagnes..." alt="Reims" /></p>
+				</div>
+				<div class="titreFormation">
+					<img class="arrow" src="img/arrow.svg" alt="arrow" />
+					<button class="accordeon">DUT Chimie</button>
+				</div>
+				<div class="panel">
+					<p>
+						<ul>
+							<li>Unniversité Paul Sabatier</li>
+							<li>Castres (81), Tarn</li>
+						</ul>
+					</p>
+					<p><img src="img/castres.jpg" title="Sous le pont Neuf coule l'Agout" alt="Castres" /></p>
+				</div>
+				<div class="titreFormation">
+					<img class="arrow" src="img/arrow.svg" alt="arrow" />
+					<button class="accordeon">Baccalauréat scientifique</button>
+				</div>
+				<div class="panel">
+					<p>
+						<ul>
+							<li>Lycée Jules Michelet</li>
+							<li>Montauban (82), Tarn-et-Garonne</li>
+						</ul>
+					</p>
+					<p><img src="img/montauban.jpg" title="On ne devrait jamais quitter Montauban" alt="Montauban" /></p>
+				</div>
+			</section>
+			<section id="creation">
+				<h1>MES CREATIONS</h1>
+				<p>
+					Créations</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+					CréationsCréationsCréationsCréationsCréationsCréationsCréationsCréationsCréationsCréations
+				</p>
+			</section>
+			<section id="contact">
+				<h1>RENCONTRONS-NOUS !</h1>
+				<p>
+					Café</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+					CaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCaféCafé
+				</p>
+			</section>
+			<footer></footer>
+		</div>
 	</div>
-	<script src="script.js"></script>
+	<script src="src/index.js"></script>
 </body>
 </html>

@@ -1,143 +1,123 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8">
-	<title>Portfolio Loïck Brouard</title>
-	<link rel="stylesheet" type="text/css" href="src/style.css">
-	
+    <meta charset="utf-8">
+    <title>Portfolio Loïck Brouard</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+
 </head>
 <body>
-	<nav>
-		<div id="photo">
-			<p><img src="img/Character.svg"></p>
-			<div id="dateDuJour"></div>
+    <nav>
+        <div id="photo">
+            <p><img src="img/Character.svg"></p>
+            <div id="dateDuJour"></div>
 
-		</div>
-		<ul>
-			<li><a href="#moi">Moi</a></li>
-			<li><a href="#parcours">Mon parcours</a></li>
-			<li><a href="#formations">Mes formations</a></li>
-			<li><a href="#creation">Mes créations</a></li>
-			<li><a href="#contact">Faisons-nous un café</a></li>
-		</ul>
-	</nav>
-	<div class="main">
-		<header>
-			<div id="moi">
-				<h1>LOÏCK BROUARD</h1>
-				<p>Alternant Développeur informatique, <span id="age"></span> ans.</p>
-				<p>
-					<a class="github" href="#"><img src="img/github.png" alt="gitHub" title="Les projets finis et en cours" /></a>
-					<a class="linkedin" href="#"><img src="img/linkedin.png" alt="linkedIn" title="Connectons-nous !" /></a>
-					<a class="CV" href="#"><img src="img/CV.png" alt="CV Loïck Brouard" title="Le format classique, mais imprimable :)" /></a>
-				</p>
-			</div>
-		</header>
-		<div class="pageMobile">
-			<section id="parcours">
-				<h1>PARCOURS</h1>
-				<p>
-					Parcours
-				</p>
-			</section>
-			<section id="creation">
-				<h1>MES CREATIONS</h1>
-				<article>
-					<div class="slideshow-container">
-						<div class="slide fade">
-							<img src="img/slide1.jpg">
-							<div class="text">Caption Text</div>
-						</div>
+        </div>
+        <ul>
+            <li><a href="#moi">Moi</a></li>
+            <li><a href="#parcours">Mon parcours</a></li>
+            <li><a href="#formations">Mes formations</a></li>
+            <li><a href="#creation">Mes créations</a></li>
+            <li><a href="#contact">Faisons-nous un café</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <header>
+            <div id="moi">
+                <h1>LOÏCK BROUARD</h1>
+                <p>Alternant Développeur informatique, <span id="age"></span> ans.</p>
+                <p>
+                    <a class="github" href="#"><img src="img/github.png" alt="gitHub" title="Les projets finis et en cours" /></a>
+                    <a class="linkedin" href="#"><img src="img/linkedin.png" alt="linkedIn" title="Connectons-nous !" /></a>
+                    <a class="CV" href="#"><img src="img/CV.png" alt="CV Loïck Brouard" title="Le format classique, mais imprimable :)" /></a>
+                </p>
+            </div>
+        </header>
+        <div class="pageMobile">
+            <section id="parcours">
+                <h1>PARCOURS</h1>
+                <div class="histogramme">
 
-						<div class="slide fade">
-							<img src="img/slide2.jpg">
-							<div class="text">Caption Two</div>
-						</div>
-
-						<div class="slide fade">
-							<img src="img/slide3.jpg">
-							<div class="text">Caption Three</div>
-						</div>
-
-						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-						<a class="next" onclick="plusSlides(1)">&#10095;</a>
-					</div>
-					<div class="explicationSlide">
-						<p>Coucou</p>
-					</div>
-				</article>
-			</section>
-			<section id="formations">
-				<h1>FORMATIONS</h1>
-				<div class="titreFormation">
-					<img class="arrow" src="img/arrow.svg" alt="arrow" />
-					<button class="accordeon">[En cours] Titre de niveau III Développeur informatique</button>
-				</div>
-				<div class="panel">
-					<ul>
-						<li><strong>CESI</strong></li>
-						<li>Formation par alternance</li>
-						<li>Rouen (76), Seine-et-Marne</li>
-					</ul>
-					<ul>
-						<li>Languages de programmation applicatifs<br>(Python, Java, C#, .NET)</li>
-						<li>Languages web<br>(HTML5/CSS3, Javascript, PHP</li>
-					</ul>
-					<img src="img/rouen.jpg" title="Ceci n'est pas Strasbourg" alt="Rouen" />
-				</div>
-				<div class="titreFormation">
-					<img class="arrow" src="img/arrow.svg" alt="arrow" />
-					<button class="accordeon">Ingénieur Emballage et Conditionnement</button>
-				</div>
-				<div class="panel">
-					<ul>
-						<li><strong>EsiReims</strong></li>
-						<li>Formation Continue (dont 3 stage de 4mois)</li>
-						<li>Reims (51), Champagne Ardenne</li>
-					</ul>
-					<ul>
-						<li>Technique de l'ingénieur<br>(gestion projets, management, résolutions problèmes)</li>
-						<li>Spécialité<br>(connaissances des matériaux, techniques d'impression)</li>
-					</ul>
-					<img src="img/reims.jpg" title="L'effet des bulles de champagnes..." alt="Reims" />
-				</div>
-				<div class="titreFormation">
-					<img class="arrow" src="img/arrow.svg" alt="arrow" />
-					<button class="accordeon">DUT Chimie</button>
-				</div>
-				<div class="panel">
-					<ul>
-						<li><strong>Unniversité Paul Sabatier</strong></li>
-						<li>Formation continue (dont 1 stage de 3mois)</li>
-						<li>Castres (81), Tarn</li>
-					</ul>
-					<ul>
-						<li>Rigueur de déroulement d'un protocole</li>
-					</ul>
-					<p><img src="img/castres.jpg" title="Sous le pont Neuf coule l'Agout" alt="Castres" /></p>
-				</div>
-				<div class="titreFormation">
-					<img class="arrow" src="img/arrow.svg" alt="arrow" />
-					<button class="accordeon">Baccalauréat scientifique</button>
-				</div>
-				<div class="panel">
-					<ul>
-						<li><strong>Lycée Jules Michelet</strong></li>
-						<li>Montauban (82), Tarn-et-Garonne</li>
-					</ul>
-					<p><img src="img/montauban.jpg" title="On ne devrait jamais quitter Montauban" alt="Montauban" /></p>
-				</div>
-			</section>
-			<section id="contact">
-				<h1>RENCONTRONS-NOUS !</h1>
-				<p>
-					Café
-				</p>
-			</section>
-			<footer></footer>
-		</div>
-	</div>
-	<script src="src/index.js"></script>
+                </div>
+                <div class="panelHistogramme"></div>
+            </section>
+            <section id="creation">
+                <h1>MES CREATIONS</h1>
+                <article>
+                    <div class="slideshow"></div> <!--Slide Show-->
+                    <div class="explicationSlide"></div> <!--Explication du slideshow-->
+                </article>
+            </section>
+            <section id="formations">
+                <h1>FORMATIONS</h1>
+                <div class="titreFormation">
+                    <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                    <button class="accordeon">[En cours] Titre de niveau III Développeur informatique</button>
+                </div>
+                <div class="panel">
+                    <ul>
+                        <li><strong>CESI</strong></li>
+                        <li>Formation par alternance</li>
+                        <li>Rouen (76), Seine-et-Marne</li>
+                    </ul>
+                    <ul>
+                        <li>Languages de programmation applicatifs<br>(Python, Java, C#, .NET)</li>
+                        <li>Languages web<br>(HTML5/CSS3, Javascript, PHP</li>
+                    </ul>
+                    <img src="img/rouen.jpg" title="Ceci n'est pas Strasbourg" alt="Rouen" />
+                </div>
+                <div class="titreFormation">
+                    <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                    <button class="accordeon">Ingénieur Emballage et Conditionnement</button>
+                </div>
+                <div class="panel">
+                    <ul>
+                        <li><strong>EsiReims</strong></li>
+                        <li>Formation Continue (dont 3 stage de 4mois)</li>
+                        <li>Reims (51), Champagne Ardenne</li>
+                    </ul>
+                    <ul>
+                        <li>Technique de l'ingénieur<br>(gestion projets, management, résolutions problèmes)</li>
+                        <li>Spécialité<br>(connaissances des matériaux, techniques d'impression)</li>
+                    </ul>
+                    <img src="img/reims.jpg" title="L'effet des bulles de champagnes..." alt="Reims" />
+                </div>
+                <div class="titreFormation">
+                    <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                    <button class="accordeon">DUT Chimie</button>
+                </div>
+                <div class="panel">
+                    <ul>
+                        <li><strong>Unniversité Paul Sabatier</strong></li>
+                        <li>Formation continue (dont 1 stage de 3mois)</li>
+                        <li>Castres (81), Tarn</li>
+                    </ul>
+                    <ul>
+                        <li>Rigueur de déroulement d'un protocole</li>
+                    </ul>
+                    <p><img src="img/castres.jpg" title="Sous le pont Neuf coule l'Agout" alt="Castres" /></p>
+                </div>
+                <div class="titreFormation">
+                    <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                    <button class="accordeon">Baccalauréat scientifique</button>
+                </div>
+                <div class="panel">
+                    <ul>
+                        <li><strong>Lycée Jules Michelet</strong></li>
+                        <li>Montauban (82), Tarn-et-Garonne</li>
+                    </ul>
+                    <p><img src="img/montauban.jpg" title="On ne devrait jamais quitter Montauban" alt="Montauban" /></p>
+                </div>
+            </section>
+            <section id="contact">
+                <h1>RENCONTRONS-NOUS !</h1>
+                <p>
+                    Café
+                </p>
+            </section>
+            <footer></footer>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
 </body>
 </html>

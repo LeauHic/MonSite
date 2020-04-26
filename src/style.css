@@ -147,10 +147,14 @@ section h1 {
 .missionDescription{
     margin-bottom: 20px;
     padding: 0px  40px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    color: var(--gris-clair);
 }
+
+    .missionDescription.active {
+        color: var(--gris-foncé);
+        font-weight: bold;
+    }
 
 .date {
     padding-top: 25px;

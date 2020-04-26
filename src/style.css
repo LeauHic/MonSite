@@ -1,7 +1,8 @@
+
 * {
     --orange: #F7C024;
     --bleu: #12CDD4;
-    --gris-clair: #A3A3A3;
+    --gris-clair: #E2E4E4;
     --gris-foncé: #5E5E5E;
     box-sizing: border-box
 }
@@ -19,6 +20,10 @@ body {
     flex-direction: row;
 }
 
+/*
+    BARRE DE MENU
+*/
+
 nav {
     background-color: var(--bleu);
     width: 230px;
@@ -27,28 +32,33 @@ nav {
     position: fixed;
 }
 
+    nav li {
+        list-style-type: none;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 1.3em;
+        color: white;
+        padding-bottom: 3px;
+        text-decoration: none;
+    }
+
+        nav a:focus {
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+
 #photo img {
     width: 200px;
     border-radius: 50%;
     margin: 10px;
 }
 
-nav li {
-    list-style-type: none;
-    padding: 10px;
-}
-
-nav a {
-    font-size: 1.3em;
-    color: white;
-    padding-bottom: 3px;
-    text-decoration: none;
-}
-
-    nav a:focus {
-        color: var(--orange);
-        font-weight: bold;
-    }
+/*
+    PARTIE MOBILE
+*/
 
 .main {
     flex-grow: 2;
@@ -58,6 +68,10 @@ nav a {
 .pageMobile {
     padding: 20px 50px 200px 20px;
 }
+
+/*
+    HEADERS
+*/
 
 header {
     background-color: var(--orange);
@@ -76,8 +90,8 @@ header {
     }
 
     header img {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 70px;
         padding: 10px;
         transition: all 0.3s ease-in-out;
     }
@@ -92,7 +106,96 @@ section h1 {
     border-bottom: 3px dashed;
     border-color: var(--orange);
 }
+/*
+    SECTION PARCOURS
+*/
+#parcours article {
+    display: flex;
+    flex-direction: column;
+}
 
+.timeline {
+    display: flex;
+    justify-content: center;
+}
+
+    .timeline button {
+        background: none;
+        font-weight: bold;
+        font-size: 2em;
+        color: var(--gris-foncé);
+        cursor: pointer;
+        padding: 18px;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .timeline .timelineBefore img {
+        transform: scaleX(-1);
+    }
+
+    .timeline ul{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -25px;
+        margin-right: 5px;
+    }
+
+.missionDescription{
+    margin-bottom: 20px;
+    padding: 0px  40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid var(--gris-clair);
+    position: relative;
+}
+
+.date:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid var(--gris-clair);
+    position: absolute;
+    top: -15px;
+    left: 42%;
+    transition: all 200ms ease-in;
+}
+
+.mission.complete .date {
+    border-top: 2px solid var(--orange);
+}
+
+    .mission.complete .date:before {
+        background-color: var(--orange);
+        border: none;
+    }
+
+.panelHistogramme {
+    background-color: var(--gris-clair);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/*
+    SECTION FORMATIONS
+*/
+
+#formations article {
+    display: flex;
+    justify-content: space-between
+}
 
 .titreFormation {
     display: flex;
@@ -100,7 +203,7 @@ section h1 {
     align-items: center;
 }
 
-.accordeon {
+.boutonFormation {
     background: none;
     font-weight: bold;
     color: var(--gris-foncé);
@@ -125,16 +228,16 @@ section h1 {
     transition: all .5s ease-in-out;
 }
 
-.panel li {
+.panelAccordeon li {
     list-style-type: none;
 }
 
-.panel {
+.panelAccordeon {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    margin-right: 20px;
     color: var(--gris-foncé);
     max-height: 0;
     overflow: hidden;
@@ -142,13 +245,9 @@ section h1 {
 }
 
 
-    .panel img {
-        height: auto;
-        width: 300px;
-    }
-
-#creation article {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+.imagesFormation {
+    height: auto;
+    width: 400px;
+    display: none;
+    border-radius: 10px;
 }

@@ -21,22 +21,48 @@ function age() {
 document.querySelector("#age").textContent = age();
 
 
+//Gestion de l'affichage de la partie parcours
+let parcoursBefore = document.querySelector(".timelineBefore");
+let parcoursNext = document.querySelector(".timelineNext");
+
+//Gestion de la flèche before
+parcoursBefore.addEventListener("click", function () {
+    let mission = document.querySelectorAll(".mission")
+    for (let i = 0; i < mission.length; i++) {
+        mission[i].classList.toggle("complete");
+    }
+});
+
+
 //Gestion de l'affichage des panel de la partie "formations"
-let accordeon = document.querySelectorAll(".titreFormation");
+let titreFormation = document.querySelectorAll(".titreFormation");
+let imagesFormation = document.querySelectorAll(".imagesFormation");
 
-for (let i = 0; i < accordeon.length; i++) {
-
-    accordeon[i].addEventListener("click", function () {
-        /* Toogle sur la class"active" des images flèches*/
-        this.firstElementChild.classList.toggle("arrowActive");
-
-        /* Toogle*/
-        let panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        }
-        else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    });
+for (let i = 0; i < titreFormation.length; i++) {
+    titreFormation[i].addEventListener("click", function () {
+        
+        for (let j = 0; j < titreFormation.length; j++) {
+            let panel = titreFormation[j].nextElementSibling;
+            if (titreFormation[i] === titreFormation[j]) { //Cas de la formation en cours
+                if (!panel.style.maxHeight) {
+                    panel.style.maxHeight = 80 + "px";
+                    titreFormation[j].firstElementChild.classList.toggle("arrowActive");
+                    imagesFormation[j].style.display ="block";
+                }
+                else {
+                    panel.style.maxHeight = null;
+                    titreFormation[j].firstElementChild.classList.toggle("arrowActive");
+                    imagesFormation[j].style.display = "none";
+                };
+            }
+            else { //Cas des autres formations
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    titreFormation[j].firstElementChild.classList.toggle("arrowActive");
+                    imagesFormation[j].style.display = "none";
+                };
+            };
+        } //Fin boucle for
+    }); // Fin callback
 };
+

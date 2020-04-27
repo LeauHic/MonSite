@@ -1,4 +1,8 @@
 
+/*
+ #### AFFICHAGE AGE ####
+ */
+
 /*Fonction permettant de determiner mon age en fonction de la date du jour*/
 //Instanciation de l'objet date et récupération du jour, moi et annee actuelle
 let date = Date.now();
@@ -13,7 +17,9 @@ let jour = Math.floor((ageEnJour - ageEnAnnee * 365.24) % 30.4375);
 document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et ${jour} jours...)`;
 
 
-//Gestion de l'affichage de la partie parcours
+/*
+ #### AFFICHAGE PARTIE "PARCOURS" ####
+ */
 let parcoursBefore = document.querySelector(".timelineBefore"); //bouton flèche before
 let parcoursNext = document.querySelector(".timelineNext");//bouton flèche next
 let mission = document.querySelectorAll(".mission")
@@ -21,7 +27,7 @@ let missionDescription = document.querySelectorAll(".missionDescription") //Nom 
 let textPanelHistogramme = document.querySelectorAll(".textePanelHistogramme"); // Description de la mission active
 let index = mission.length-1; 
 
-function timelineAnimation(index) {
+const timelineAnimation = (index) => {
     /*Fonction parcourant les différents élement de .timeline et de .panelHistogramme
      * pour activer/afficher les élements correspondant la mission active et/où passée
      */
@@ -54,6 +60,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 for (let i = 0; i <= mission.length - 1; i++) {
     mission[i].addEventListener("click", () => {
         timelineAnimation(i);
+        return index = i;
     })
 };
 
@@ -69,35 +76,43 @@ parcoursNext.addEventListener("click", function () {
     timelineAnimation(index);
 });
 
-//Gestion de l'affichage des panel de la partie "formations"
+/*
+ #### AFFICHAGE PARTIE "FORMATION" ####
+ */
 let titreFormation = document.querySelectorAll(".titreFormation");
 let imagesFormation = document.querySelectorAll(".imagesFormation");
 
+const formationAnimation = (i) => {
+    /*Fonction permettant d'ouvrir la formation i et de refermer les autres*/
+    for (let j = 0; j < titreFormation.length; j++) {
+        let panel = titreFormation[j].nextElementSibling;
+        if (titreFormation[i] === titreFormation[j]) { //Cas de la formation en cours
+            if (!panel.style.maxHeight) {
+                panel.style.maxHeight = 80 + "px";
+                titreFormation[j].firstElementChild.classList.toggle("arrowActive");
+                imagesFormation[j].style.display = "block";
+            }
+            else {
+                panel.style.maxHeight = null;
+                titreFormation[j].firstElementChild.classList.toggle("arrowActive");
+                imagesFormation[j].style.display = "none";
+            };
+        } //Fin if principal
+        else { //Cas des autres formations
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                titreFormation[j].firstElementChild.classList.toggle("arrowActive");
+                imagesFormation[j].style.display = "none";
+            };
+        };//Fin else principal
+    } //Fin boucle for
+}
+
+formationAnimation(0); //Ouverture de la dernière formation par défaut
+
 for (let i = 0; i < titreFormation.length; i++) {
     titreFormation[i].addEventListener("click", function () {
-
-        for (let j = 0; j < titreFormation.length; j++) {
-            let panel = titreFormation[j].nextElementSibling;
-            if (titreFormation[i] === titreFormation[j]) { //Cas de la formation en cours
-                if (!panel.style.maxHeight) {
-                    panel.style.maxHeight = 80 + "px";
-                    titreFormation[j].firstElementChild.classList.toggle("arrowActive");
-                    imagesFormation[j].style.display = "block";
-                }
-                else {
-                    panel.style.maxHeight = null;
-                    titreFormation[j].firstElementChild.classList.toggle("arrowActive");
-                    imagesFormation[j].style.display = "none";
-                };
-            }
-            else { //Cas des autres formations
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                    titreFormation[j].firstElementChild.classList.toggle("arrowActive");
-                    imagesFormation[j].style.display = "none";
-                };
-            };
-        } //Fin boucle for
+        formationAnimation(i);
     }); // Fin callback
 };
 

@@ -23,7 +23,7 @@
     </nav>
     <div class="main">
         <header>
-            <div id="moi">
+            <div>
                 <h1>LOÏCK BROUARD</h1>
                 <p>Alternant Développeur informatique, <span id="age"></span></p>
                 <p>
@@ -34,6 +34,14 @@
             </div>
         </header>
         <div class="pageMobile">
+            <section id="moi">
+                <h1>BONJOUR :)</h1>
+                <article>
+                    <p>
+                        Bienvenue sur mon mon espace qui sert de portfolio, CV et de point de contact !<br />
+                    </p>
+                </article>
+            </section>
             <section id="parcours">
                 <h1>PARCOURS</h1>
                 <article>
@@ -115,8 +123,7 @@
             <section id="creation">
                 <h1>MES CREATIONS</h1>
                 <article>
-                    <div class="slideshow"></div> <!--Slide Show-->
-                    <div class="explicationSlide"></div> <!--Explication du slideshow-->
+                    <p>En cours de construction, nos meilleurs élements se penchent en ce moment même sur la quetion...</p>
                 </article>
             </section>
             <section id="formations">
@@ -188,9 +195,47 @@
             </section>
             <section id="contact">
                 <h1>RENCONTRONS-NOUS !</h1>
+                <article>
+                    <form id="myform" class="cssform">
+                        <p>
+                            <label for="firstName">Prénom* :</label>
+                            <input type="text" id="user" value="" required />
+                        </p>
+                        <p>
+                            <label for="familyName">Nom :</label>
+                            <input type="text" id="user" value="" />
+                        </p>
+                        <p>
+                            <label for="familyName">Téléphone :</label>
+                            <input type="text" id="user" value="" />
+                        </p>
+                        <p>
+                            <label for="emailaddress">Email* :</label>
+                            <input type="text" id="emailaddress" value="" required />
+                        </p>
+                        <p>
+                            <label for="comments">Message* :</label>
+                            <textarea id="comments" rows="5" cols="25" required></textarea>
+                        </p>
+                        <p>
+                            <input type="submit" value="Envoyer" />
+                            <input type="reset" value="Reset" />
+                        </p>
+                    </form>
+                </article>
             </section>
-            <footer></footer>
         </div>
+        <footer>
+            <p class="wink">
+                Merci d'avoir pris le temps d'arriver jusqu'ici,
+                si cela vous a plu, que vous souhaitez discuter ou me proposer un super travail dans une équipe sympa n'hésitez par à remonter un tout petit peu et me laisser un
+                message dans la partie contact ;)
+            </p>
+            <p>
+                Site créé par mes soins avec sueurs et amour en HTML5/CSS3/JS
+                et hébergé par <a href="https://www.alwaysdata.com/">AlwaysData</a>
+            </p>
+        </footer>
     </div>
     <script src="src/index.js"></script>
 </body>

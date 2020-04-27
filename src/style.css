@@ -270,3 +270,20 @@ section h1 {
     display: none;
     border-radius: 10px;
 }
+/*
+    FOOTER
+*/
+footer {
+    background-color: var(--gris-clair);
+    padding: 10px 20% 10px 20%;
+    text-align: center;
+    color: var(--gris-foncé);
+}
+
+    footer .wink {
+        font-style: italic;
+        font-weight: bold;
+        border-top: 2px dotted var(--gris-foncé);
+        padding : 10px 0px;
+        border-bottom: 2px dotted var(--gris-foncé);
+    }

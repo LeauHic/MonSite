@@ -25,6 +25,7 @@ body {
 */
 
 nav {
+    z-index: 1;
     background-color: var(--bleu);
     width: 230px;
     height: 100%;
@@ -112,11 +113,13 @@ section h1 {
 #parcours article {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .timeline {
     display: flex;
     justify-content: center;
+    flex-wrap: nowrap;
 }
 
     .timeline button {
@@ -135,20 +138,26 @@ section h1 {
         transform: scaleX(-1);
     }
 
-    .timeline ul{
+    .timeline ul {
         list-style-type: none;
         display: flex;
-        align-items: center;
-        justify-content: center;
         margin-left: -25px;
         margin-right: 5px;
     }
-
+    .timeline ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        position: relative;
+    }
+.mission{
+    cursor: pointer;
+}
 .missionDescription{
-    margin-bottom: 20px;
-    padding: 0px  40px;
+    margin: 0px 40px 20px 40px;
     align-items: center;
-    color: var(--gris-clair);
+    text-align: center;
+    color: var(--gris-foncé);
 }
 
     .missionDescription.active {
@@ -160,21 +169,22 @@ section h1 {
     padding-top: 25px;
     display: flex;
     justify-content: center;
+    text-align: center;
     border-top: 2px solid var(--gris-clair);
     position: relative;
+    color: var(--gris-foncé);
 }
 
-.date:before {
-    content: '';
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 1px solid var(--gris-clair);
-    position: absolute;
-    top: -15px;
-    left: 42%;
-    transition: all 200ms ease-in;
-}
+    .date:before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid var(--gris-clair);
+        position: absolute;
+        top: -15px;
+        transition: all 200ms ease-in;
+    }
 
 .mission.complete .date {
     border-top: 2px solid var(--orange);
@@ -185,17 +195,23 @@ section h1 {
         border: none;
     }
 
-.panelHistogramme {
+.textePanelHistogramme {
     background-color: var(--gris-clair);
+    color: var(--gris-foncé);
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
+    display: none;
 }
 
+    .textePanelHistogramme li {
+        margin-left: 50px;
+        padding: 10px;
+        list-style-type: square;
+    }
 /*
     SECTION FORMATIONS
 */
-
 #formations article {
     display: flex;
     justify-content: space-between
@@ -238,7 +254,6 @@ section h1 {
 
 .panelAccordeon {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     margin-right: 20px;

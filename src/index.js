@@ -9,41 +9,64 @@ ageEnAnnee = Math.floor(ageEnAnnee);
 let mois = Math.floor((ageEnJour - ageEnAnnee * 365.24) / 30.4375);
 let jour = Math.floor((ageEnJour - ageEnAnnee * 365.24) % 30.4375);
 
-
 //attribution au div "age" de l'age calculé
 document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et ${jour} jours...)`;
 
 
 //Gestion de l'affichage de la partie parcours
-let parcoursBefore = document.querySelector(".timelineBefore");
-let parcoursNext = document.querySelector(".timelineNext");
+let parcoursBefore = document.querySelector(".timelineBefore"); //bouton flèche before
+let parcoursNext = document.querySelector(".timelineNext");//bouton flèche next
 let mission = document.querySelectorAll(".mission")
-let index = mission.length; 
+let missionDescription = document.querySelectorAll(".missionDescription") //Nom de la mission du .timeline
+let textPanelHistogramme = document.querySelectorAll(".textePanelHistogramme"); // Description de la mission active
+let index = mission.length-1; 
+
+function timelineAnimation(index) {
+    /*Fonction parcourant les différents élement de .timeline et de .panelHistogramme
+     * pour activer/afficher les élements correspondant la mission active et/où passée
+     */
+    for (let i = 0; i <= mission.length - 1; i++) {
+        if (index > i) { //Mission dans le scope avant l'index
+            mission[i].classList.add("complete");
+            missionDescription[i].classList.remove("active");
+            textPanelHistogramme[i].style.display = "none";
+        }
+        else { //Mission hors scope (après l'index)
+            mission[i].classList.remove("complete");
+            missionDescription[i].classList.remove("active");
+            textPanelHistogramme[i].style.display = "none";
+            if (i === index) { //Mission correspondant à l'index
+                missionDescription[i].classList.add("active")
+                mission[i].classList.add("complete");
+                textPanelHistogramme[i].style.display = "block";
+            }
+        }
+    } //fin boucle for
+} //Fin fonction timelineAnimation
+
+
+//Affichage de la mission en cours à la chargement de la page
+window.addEventListener('DOMContentLoaded', () =>{
+    timelineAnimation(index);
+});
+
+//affichage de la mission selectionnée, par initiation d'une callback par élément
+for (let i = 0; i <= mission.length - 1; i++) {
+    mission[i].addEventListener("click", () => {
+        timelineAnimation(i);
+    })
+};
 
 //Gestion de la flèche before
 parcoursBefore.addEventListener("click", function () {
-    (index > 1) ? index-- : index;
-    for (let i = 1; i < mission.length; i++) {
-        if (index > i) {
-            mission[i].classList.add("complete");
-        }
-        else {
-            mission[i].classList.remove("complete");
-        }
-    }
+    (index > 0) ? index-- : index;
+    timelineAnimation(index);
 });
 
 //Gestion de la flèche next
 parcoursNext.addEventListener("click", function () {
-   (index <= mission.length)? index++ : index;
-    for (let i = 1; i < mission.length; i++) {
-        if (index > i) {
-            mission[i].classList.add("complete");
-        }
-        else {
-            mission[i].classList.remove("complete");
-        }
-    }
+   (index < mission.length-1)? index++ : index;
+    timelineAnimation(index);
 });
 
 //Gestion de l'affichage des panel de la partie "formations"

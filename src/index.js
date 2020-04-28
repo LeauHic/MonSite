@@ -16,6 +16,30 @@ let jour = Math.floor((ageEnJour - ageEnAnnee * 365.24) % 30.4375);
 //attribution au div "age" de l'age calculé
 document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et ${jour} jours...)`;
 
+/*
+#### AFFICHAGE DE LA PARTIE CREATION ####
+ */
+
+let slideIndex = [1, 1, 1,1]; //Index de départ des deux slide show
+let slideId = ["slides1", "slides2", "slides3", "slides4"] //Array regroupant les nom de classes des slideshows
+showSlides(1, 0); //Affiche la première image du slideshow 1
+showSlides(1, 1);//Affiche la première image du slideshow 2
+showSlides(1, 2);//Affiche la première image du slideshow 3
+showSlides(1, 3);//Affiche la première image du slideshow 4
+
+function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+    let slideshowSelected = document.getElementsByClassName(slideId[no]);
+    if (n > slideshowSelected.length) { slideIndex[no] = 1 }
+    if (n < 1) { slideIndex[no] = slideshowSelected.length }
+    for (let i = 0; i < slideshowSelected.length; i++) {
+        slideshowSelected[i].style.display = "none";
+    }
+    slideshowSelected[slideIndex[no] - 1].style.display = "block";
+}
 
 /*
  #### AFFICHAGE PARTIE "PARCOURS" ####
@@ -88,7 +112,7 @@ const formationAnimation = (i) => {
         let panel = titreFormation[j].nextElementSibling;
         if (titreFormation[i] === titreFormation[j]) { //Cas de la formation en cours
             if (!panel.style.maxHeight) {
-                panel.style.maxHeight = 80 + "px";
+                panel.style.maxHeight = 300 + "px";
                 titreFormation[j].firstElementChild.classList.toggle("arrowActive");
                 imagesFormation[j].style.display = "block";
             }

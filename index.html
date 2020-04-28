@@ -38,8 +38,81 @@
                 <h1>BONJOUR :)</h1>
                 <article>
                     <p>
-                        Bienvenue sur mon mon espace qui sert de portfolio, CV et de point de contact !<br />
+                        Bienvenue sur mon mon espace qui sert de CV et de point de contact !<br />
+                        Aujourd'hui monportfolio se cractérise principalement par le site en lui même mais bientôt la section Création sera pleine à craquer !!<br />
                     </p>
+                </article>
+            </section>
+            <section id="creation">
+                <h1>MES CREATIONS</h1>
+                <article>
+                    <!-- 1er slideshow-->
+                    <div class="slideshowContainer">
+                        <div class="slides1">
+                            <img src="./img/website.png" alt="Site Web / HTML CSS JavaScript PHP" title="Fractal, n'est-il pas ?">
+                        </div>
+                        <div class="slides1">
+                            <h2>Description</h2>
+                            <p>Site internet de présentation</p>
+                            <h2>Environnement de développement</h2>
+                            <p>
+                                Language : HTML / CSS / JavaScript / Node.Js / Webpack<br />
+                                IDLE : Visual Studio<br />
+                                Support : Multiples
+                            </p>
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                    </div>
+                    <!-- 2eme slideshow-->
+                    <div class="slideshowContainer">
+                        <div class="slides2">
+                            <img src="./img/chiffreMystere.png" alt="Chiffre Mystère / C#">
+                        </div>
+                        <div class="slides2">
+                            <h2>Description</h2>
+                            <p>Jeu où l'on doit retrouver un nombre entre 1 et 20 généré par le jeu</p>
+                            <h2>Environnement de développement</h2>
+                            <p>
+                                Language : C#<br />
+                                IDLE : Visual Studio / Blend<br />
+                                Support : MOOC OpenClassRoom
+                            </p>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                    </div>
+                    <!-- 3eme slideshow-->
+                    <div class="slideshowContainer">
+                        <div class="slides3">
+                            <img src="./img/labyrinthePython.png" alt="Labyrinthe / Python">
+                        </div>
+                        <div class="slides3">
+                            <h2>Description</h2>
+                            <p>Jeu de labyrinthe format console, avec editeur de carte sur notepad</p>
+                            <h2>Environnement de développement</h2>
+                            <p>
+                                Language : Python<br />
+                                Editeur texte : SublimeText<br/>
+                                Interpréteur : PythonShell<br />
+                                Support : MOOC OpenClassRoom
+                            </p>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+                    </div>
+                    <!-- 4eme slideshow-->
+                    <div class="slideshowContainer">
+                        <div class="slides4">
+                            <p>En cours d'écriture</p>
+                        </div>
+                        <div class="slides4">
+                            <p>En cours d'écriture</p>
+                        </div>
+                        <!--<a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>-->
+                    </div>
                 </article>
             </section>
             <section id="parcours">
@@ -120,12 +193,6 @@
                     </div>
                 </article>
             </section>
-            <section id="creation">
-                <h1>MES CREATIONS</h1>
-                <article>
-                    <p>En cours de construction, nos meilleurs élements se penchent en ce moment même sur la quetion...</p>
-                </article>
-            </section>
             <section id="formations">
                 <h1>FORMATIONS</h1>
                 <article>
@@ -189,40 +256,43 @@
                         <img class="imagesFormation" src="img/rouen.jpg" title="Ceci n'est pas Strasbourg" alt="Rouen" />
                         <img class="imagesFormation" src="img/reims.jpg" title="L'effet des bulles de champagnes..." alt="Reims" />
                         <img class="imagesFormation" src="img/castres.jpg" title="Sous le pont Neuf coule l'Agout" alt="Castres" />
-                        <img class="imagesFormation" src="img/montauban.jpg" title="On ne devrait jamais quitter Montauban" alt="Montauban" />
+                        <img class="imagesFormation" src="img/montauban.jpg" title="Montauban, On ne devrait jamais quitter Montauban" alt="Montauban" />
                     </div>
                 </article>
             </section>
             <section id="contact">
                 <h1>RENCONTRONS-NOUS !</h1>
                 <article>
-                    <form id="myform" class="cssform">
-                        <p>
-                            <label for="firstName">Prénom* :</label>
-                            <input type="text" id="user" value="" required />
-                        </p>
-                        <p>
-                            <label for="familyName">Nom :</label>
-                            <input type="text" id="user" value="" />
-                        </p>
-                        <p>
-                            <label for="familyName">Téléphone :</label>
-                            <input type="text" id="user" value="" />
-                        </p>
-                        <p>
-                            <label for="emailaddress">Email* :</label>
-                            <input type="text" id="emailaddress" value="" required />
-                        </p>
-                        <p>
-                            <label for="comments">Message* :</label>
-                            <textarea id="comments" rows="5" cols="25" required></textarea>
-                        </p>
-                        <p>
+                    <form action="./src/traitement.php" method="post">
+                        <div class="inputContainer">
+                            <input type="text" id="firstName" value="" required />
+                            <label>Prenom*</label>
+                        </div>
+                        <div class="inputContainer">
+                            <input type="text" id="familyName" value="" required />
+                            <label>Nom*</label>
+                        </div>
+                        <div class="inputContainer">
+                            <input type="text" id="phone" value="" required />
+                            <label>Téléphone</label>
+                        </div>
+                        <div class="inputContainer">
+                            <input type="email" id="emailAddress" value="" required />
+                            <label>Email*</label>
+                        </div>
+                        <div class="inputContainer">
+                            <textarea id="message" rows="5" cols="30" required></textarea>
+                            <label>Message*</label>
+                        </div>
+
+                        <div class="bouttonForm">
                             <input type="submit" value="Envoyer" />
-                            <input type="reset" value="Reset" />
-                        </p>
+                            <input type="reset" value="Tout effacer" />
+                        </div>
                     </form>
+                    <img src="img/chat.jpg" alt="Discutons" title="&#34;Conservons&#34; le contact" />
                 </article>
+
             </section>
         </div>
         <footer>
@@ -232,7 +302,7 @@
                 message dans la partie contact ;)
             </p>
             <p>
-                Site créé par mes soins avec sueurs et amour en HTML5/CSS3/JS
+                Site créé par mes soins avec sueurs, <a href="./src/ressources.html">ressources</a> et amour en HTML5/CSS3/JS
                 et hébergé par <a href="https://www.alwaysdata.com/">AlwaysData</a>
             </p>
         </footer>

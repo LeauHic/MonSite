@@ -107,6 +107,76 @@ section h1 {
     border-bottom: 3px dashed;
     border-color: var(--orange);
 }
+
+/*
+    SECTION CREATION
+*/
+
+#creation article {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.mySlides1, .mySlides2 {
+    display: none
+}
+
+/* Mise en forme des différents carroussels */
+.slideshowContainer {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    background: var(--gris-clair);
+    width: 45%;
+    border-radius: 20px;
+    margin: 10px;
+
+}
+
+.slideshowContainer div ~ div{
+    margin: 20px 50px;
+}
+
+    .slideshowContainer img {
+        width: 100%;
+        vertical-align: middle;
+        border-radius: 20px;
+        filter: grayscale(100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .slideshowContainer img:hover {
+        filter: none;
+    }
+
+/* Les liens Next et Previous */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--gris-foncé);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position du boutton Next à droite */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    .prev:hover, .next:hover {
+        background-color: var(--orange);
+        color: var(--gris-clair);
+    }
+
 /*
     SECTION PARCOURS
 */
@@ -144,16 +214,19 @@ section h1 {
         margin-left: -25px;
         margin-right: 5px;
     }
-    .timeline ul li {
-        display: flex;
-        flex-direction: column;
-        justify-content:space-between;
-        position: relative;
-    }
-.mission{
+
+        .timeline ul li {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+.mission {
     cursor: pointer;
 }
-.missionDescription{
+
+.missionDescription {
     margin: 0px 40px 20px 40px;
     align-items: center;
     text-align: center;
@@ -263,6 +336,12 @@ section h1 {
     transition: max-height 0.2s ease-out;
 }
 
+.panelAccordeon ul~ul{
+    margin:20px;
+    padding:5px;
+    border-left: 1px dashed var(--gris-foncé);
+}
+
 
 .imagesFormation {
     height: auto;
@@ -270,20 +349,101 @@ section h1 {
     display: none;
     border-radius: 10px;
 }
+
 /*
+    CONTACT
+*/
+
+#contact article {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+    #contact article img {
+        max-width: 50%;
+        border-radius: 10px;
+    }
+
+form {
+    width: 75%;
+    color: var(--gris-foncé);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+    form .inputContainer {
+        display: flex;
+        flex-flow: column nowrap;
+        max-width: 60%;
+    }
+
+.inputContainer {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+    .inputContainer label {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 1em;
+        color: var(--gris-foncé);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .inputContainer input, textarea {
+        border: 0;
+        border-bottom: 1px solid var(--gris-foncé);
+        padding: 8px 0 5px 0;
+        font-size: 1em;
+        color: var(--gris-foncé);
+    }
+
+        .inputContainer input:focus, textarea:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid var(--orange);
+        }
+
+            .inputContainer input:focus ~ label,
+            .inputContainer input:valid ~ label,
+            .inputContainer textarea:focus ~ label,
+            .inputContainer textarea:valid ~ label {
+                top: -12px;
+                font-size: 0.8em;
+            }
+
+form .bouttonForm input {
+    color: white;
+    background-color: var(--orange);
+    outline: none;
+    border: 0;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+    form .bouttonForm input:focus {
+        border: 1.2px solid var(--gris-foncé);
+    }
+    /*
     FOOTER
 */
-footer {
-    background-color: var(--gris-clair);
-    padding: 10px 20% 10px 20%;
-    text-align: center;
-    color: var(--gris-foncé);
-}
+    footer {
+        background-color: var(--gris-clair);
+        padding: 10px 20% 10px 20%;
+        text-align: center;
+        color: var(--gris-foncé);
+    }
 
     footer .wink {
         font-style: italic;
         font-weight: bold;
         border-top: 2px dotted var(--gris-foncé);
-        padding : 10px 0px;
+        padding: 10px 0px;
         border-bottom: 2px dotted var(--gris-foncé);
     }

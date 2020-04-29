@@ -17,6 +17,26 @@ let jour = Math.floor((ageEnJour - ageEnAnnee * 365.24) % 30.4375);
 document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et ${jour} jours...)`;
 
 /*
+#### GESTION ANIMATION HEADER ####
+ */
+let navWidth = document.querySelector("nav").offsetWidth;
+let body = document.querySelector("body");
+
+//in case js in turned off
+window.onload = function () {
+    body.classList.remove("stickyHeader");
+};
+
+window.onscroll = function () {
+    let sc = document.documentElement.scrollTop
+    if (sc > 30) {
+        body.classList.add("stickyHeader"); 
+    } else {
+        body.classList.remove("stickyHeader");
+    }
+};
+
+/*
 #### AFFICHAGE DE LA PARTIE CREATION ####
  */
 

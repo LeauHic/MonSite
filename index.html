@@ -7,42 +7,37 @@
 
 </head>
 <body>
-    <nav>
-        <div id="photo">
-            <p><img src="img/Character.svg"></p>
-            <div id="dateDuJour"></div>
-
+    <header>
+        <div class="topHeader">
+            <h1>BIENVENUE</h1>
+            <p>Je m'appelle Loïck Brouard et je souhaite me reconvertir en programmation.</p>
+            <p>De formation ingénieur en Emballage</p>
+            <p>
+                &#9829 --> La POO, un code bien commenté, le flan et les blagues absurdes
+                <br />
+                <br />
+                &#33;&#9829 --> Me battre avec du CSS, les emissions de télé-réalité, m'ennuyer
+                <br />
+            <p>La suite c'est plus bas...  \/\/\/</p>
         </div>
-        <ul>
-            <li><a href="#moi">Moi</a></li>
-            <li><a href="#parcours">Mon parcours</a></li>
-            <li><a href="#formations">Mes formations</a></li>
-            <li><a href="#creation">Mes créations</a></li>
-            <li><a href="#contact">Faisons-nous un café</a></li>
-        </ul>
-    </nav>
-    <div class="main">
-        <header>
-            <div>
-                <h1>LOÏCK BROUARD</h1>
-                <p>Alternant Développeur informatique, <span id="age"></span></p>
-                <p>
-                    <a id="github" href="https://github.com/LeauHic" target="_blank"><img src="img/github.png" alt="gitHub" title="Les projets finis et en cours" /></a>
-                    <a id="linkedin" href="https://www.linkedin.com/in/lo%C3%AFck-brouard-489ba795/" target="_blank"><img src="img/linkedin.png" alt="linkedIn" title="Connectons-nous !" /></a>
-                    <a id="CV" href="#"><img src="img/CV.png" alt="CV Loïck Brouard" title="Le format classique, mais imprimable :)" /></a>
-                </p>
+        <div class="miniHeader">
+            <h1>LOÏCK BROUARD</h1>
+            <p>Alternant Développeur informatique, <span id="age"></span></p>
+            <div class="reseaux">
+                <a id="github" href="https://github.com/LeauHic" target="_blank"><img src="img/github.png" alt="gitHub" title="Les projets finis et en cours" /></a>
+                <a id="linkedin" href="https://www.linkedin.com/in/lo%C3%AFck-brouard-489ba795/" target="_blank"><img src="img/linkedin.png" alt="linkedIn" title="Connectons-nous !" /></a>
+                <a id="CV" href="#"><img src="img/CV.png" alt="CV Loïck Brouard" title="Le format classique, mais imprimable :)" /></a>
             </div>
-        </header>
+        </div>
+    </header>
+    <div class="main">
+        <nav>
+                <a href="#creation">Créations</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#formations">Formations</a>
+                <a href="#contact">Contact</a>
+        </nav>
         <div class="pageMobile">
-            <section id="moi">
-                <h1>BONJOUR :)</h1>
-                <article>
-                    <p>
-                        Bienvenue sur mon mon espace qui sert de CV et de point de contact !<br />
-                        Aujourd'hui monportfolio se cractérise principalement par le site en lui même mais bientôt la section Création sera pleine à craquer !!<br />
-                    </p>
-                </article>
-            </section>
             <section id="creation">
                 <h1>MES CREATIONS</h1>
                 <article>
@@ -86,7 +81,7 @@
                     <!-- 3eme slideshow-->
                     <div class="slideshowContainer">
                         <div class="slides3">
-                            <img src="./img/labyrinthePython.png" alt="Labyrinthe / Python">
+                            <a href="./app/labyrinthePython.zip"><img src="./img/labyrinthePython.png" alt="Labyrinthe / Python"></a>
                         </div>
                         <div class="slides3">
                             <h2>Description</h2>
@@ -94,7 +89,7 @@
                             <h2>Environnement de développement</h2>
                             <p>
                                 Language : Python<br />
-                                Editeur texte : SublimeText<br/>
+                                Editeur texte : SublimeText<br />
                                 Interpréteur : PythonShell<br />
                                 Support : MOOC OpenClassRoom
                             </p>
@@ -111,7 +106,7 @@
                             <p>En cours d'écriture</p>
                         </div>
                         <!--<a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>-->
+                        <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>-->
                     </div>
                 </article>
             </section>
@@ -265,23 +260,23 @@
                 <article>
                     <form action="./src/traitement.php" method="post">
                         <div class="inputContainer">
-                            <input type="text" id="firstName" value="" required />
+                            <input type="text" id="firstName" name="firstName" value="" required />
                             <label>Prenom*</label>
                         </div>
                         <div class="inputContainer">
-                            <input type="text" id="familyName" value="" required />
+                            <input type="text" id="familyName" name="familyName" value="" required />
                             <label>Nom*</label>
                         </div>
                         <div class="inputContainer">
-                            <input type="text" id="phone" value="" required />
+                            <input type="text" id="phone" name="phone" value="" required />
                             <label>Téléphone</label>
                         </div>
                         <div class="inputContainer">
-                            <input type="email" id="emailAddress" value="" required />
+                            <input type="email" id="emailAddress" name="emailAddress" value="" required />
                             <label>Email*</label>
                         </div>
                         <div class="inputContainer">
-                            <textarea id="message" rows="5" cols="30" required></textarea>
+                            <textarea id="message" name="message" rows="5" cols="30" required></textarea>
                             <label>Message*</label>
                         </div>
 
@@ -292,7 +287,6 @@
                     </form>
                     <img src="img/chat.jpg" alt="Discutons" title="&#34;Conservons&#34; le contact" />
                 </article>
-
             </section>
         </div>
         <footer>

@@ -28,13 +28,41 @@ window.onload = function () {
 };
 
 window.onscroll = function () {
+    stikyHeader();
+    activeNav()
+
+};
+
+function stikyHeader() {
     let sc = document.documentElement.scrollTop
     if (sc > 30) {
-        body.classList.add("stickyHeader"); 
+        body.classList.add("stickyHeader");
     } else {
         body.classList.remove("stickyHeader");
     }
-};
+}//Fin fonction
+
+/*
+#### GESTION DES ANCRES DU NAV ####
+ */
+
+//scrollspy
+function activeNav() {
+    let menu = document.querySelectorAll(".menu");
+    let section = document.querySelectorAll("section");
+    for (let i = 0; i < section.length; i++) {
+        let top = section[i].offsetTop; //repérage du début de la section
+        let bottom = top + section[i].scrollHeight; //Repérage de la fin de la section
+        if (document.documentElement.scrollTop >= top && document.documentElement.scrollTop <= bottom) {
+            menu[i].classList.add('active');
+        }
+        else {
+            menu[i].classList.remove('active');
+        };
+    };//Fin boucle for section
+};//Fin fonction activeNav
+
+
 
 /*
 #### AFFICHAGE DE LA PARTIE CREATION ####
@@ -45,7 +73,6 @@ let slideId = ["slides1", "slides2", "slides3", "slides4"] //Array regroupant le
 showSlides(1, 0); //Affiche la première image du slideshow 1
 showSlides(1, 1);//Affiche la première image du slideshow 2
 showSlides(1, 2);//Affiche la première image du slideshow 3
-showSlides(1, 3);//Affiche la première image du slideshow 4
 
 function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
@@ -68,6 +95,7 @@ let parcoursBefore = document.querySelector(".timelineBefore"); //bouton flèche
 let parcoursNext = document.querySelector(".timelineNext");//bouton flèche next
 let mission = document.querySelectorAll(".mission")
 let missionDescription = document.querySelectorAll(".missionDescription") //Nom de la mission du .timeline
+let dateFormation = document.querySelectorAll(".date") //Nom de la mission du .timeline
 let textPanelHistogramme = document.querySelectorAll(".textePanelHistogramme"); // Description de la mission active
 let index = mission.length-1; 
 
@@ -79,16 +107,21 @@ const timelineAnimation = (index) => {
         if (index > i) { //Mission dans le scope avant l'index
             mission[i].classList.add("complete");
             missionDescription[i].classList.remove("active");
+            dateFormation[i].classList.remove("active");
             textPanelHistogramme[i].style.display = "none";
         }
         else { //Mission hors scope (après l'index)
             mission[i].classList.remove("complete");
             missionDescription[i].classList.remove("active");
+            dateFormation[i].classList.remove("active");
             textPanelHistogramme[i].style.display = "none";
             if (i === index) { //Mission correspondant à l'index
                 missionDescription[i].classList.add("active")
+                dateFormation[i].classList.add("active")
                 mission[i].classList.add("complete");
                 textPanelHistogramme[i].style.display = "block";
+                textPanelHistogramme[i].style.heigth = "0px";
+                textPanelHistogramme[i].style.heigth = "auto";
             }
         }
     } //fin boucle for

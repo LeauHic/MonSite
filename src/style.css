@@ -21,7 +21,6 @@ html, body {
     margin: 0;
     display: flex;
     flex-flow: column wrap;
-    width: auto;
 }
 
 body {
@@ -549,16 +548,22 @@ footer {
         border-bottom: 2px dotted var(--dark);
     }
 
-@media (media:handheld), (max-width: 900px) {
-    body{
-        padding:0;
+@media only screen and (max-width: 900px) {
+
+    html, body {
+        margin: 0;
+        display: inline-block;
     }
+    body{
+        padding-top:0;
+    }
+
         body.stickyHeader {
             padding-top: 0px;
         }
 
             body.stickyHeader header {
-                height: 60px;
+                height: auto;
                 background-color: var(--medium);
             }
 
@@ -568,21 +573,18 @@ footer {
 
     header {
         position: relative;
+        height: auto;
     }
 
         header .topHeader {
             display: flex;
             height: auto;
-            flex-flow: column wrap;
+            flex-flow: column nowrap;
             justify-content: flex-start;
             align-items: flex-start;
             font-size: 1.2em;
             margin: 20px;
             overflow: hidden;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
         }
 
             header .topHeader p:last-child {
@@ -598,12 +600,20 @@ footer {
                 color: var(--contraste);
                 font-size: 1.5em;
             }
+
     .main {
         position: relative;
+        width: 100%;
         top: 0;
     }
 
     .pageMobile {
-        padding: 20px 50px 50px 50px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    section{
+        display: inline-block;
+        
     }
 }

@@ -21,24 +21,29 @@ document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et
  */
 let navWidth = document.querySelector("nav").offsetWidth;
 let body = document.querySelector("body");
-  
+let media = window.matchMedia("(max-width: 900px)");
+
 let jeScroll = (media) => {
     document.querySelector("#width").textContent = window.outerWidth; 
     if (!media.matches) {
         stikyHeader();
         activeNav()
     }//fin if media.matches
+    else {
+        body.classList.remove("stickyHeader");
+    };
 }; //fin onscroll()
 
-let media = window.matchMedia("(smax-width: 900px)");
+media.addListener(jeScroll);
+
 window.onscroll = function () {
     jeScroll(media);
 };
-media.addListener(jeScroll);
+
 
 function stikyHeader() {
     let sc = document.documentElement.scrollTop
-    if (sc > 30) {
+    if (sc > 1) {
         body.classList.add("stickyHeader");
     } else {
         body.classList.remove("stickyHeader");

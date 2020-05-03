@@ -79,15 +79,17 @@ header {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
-     header .topHeader p:last-child{
-         align-self: center;
-         justify-self: flex-end;
-     }
+
+        header .topHeader p:last-child {
+            align-self: center;
+            justify-self: flex-end;
+        }
 
         header .topHeader p {
             margin: 20px;
         }
-        header .topHeader span{
+
+        header .topHeader span {
             color: var(--contraste);
             font-size: 1.5em;
         }
@@ -275,7 +277,7 @@ section h1 {
 
 .timeline {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: nowrap;
 }
 
@@ -298,7 +300,8 @@ section h1 {
     .timeline ul {
         list-style-type: none;
         display: flex;
-        margin-left: -25px;
+        padding: 0;
+        margin-left: 5px;
         margin-right: 5px;
     }
 
@@ -339,6 +342,7 @@ section h1 {
         color: var(--dark);
         font-weight: bold;
     }
+
     .date:before {
         content: '';
         width: 25px;
@@ -531,7 +535,7 @@ form .bouttonForm input {
 */
 footer {
     background-color: var(--light);
-    font-size: 0.8em;   
+    font-size: 0.8em;
     padding: 10px 20% 10px 20%;
     text-align: center;
     color: var(--dark);
@@ -544,3 +548,62 @@ footer {
         padding: 10px 0px;
         border-bottom: 2px dotted var(--dark);
     }
+
+@media (media:handheld), (max-width: 900px) {
+    body{
+        padding:0;
+    }
+        body.stickyHeader {
+            padding-top: 0px;
+        }
+
+            body.stickyHeader header {
+                height: 60px;
+                background-color: var(--medium);
+            }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        position: relative;
+    }
+
+        header .topHeader {
+            display: flex;
+            height: auto;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-size: 1.2em;
+            margin: 20px;
+            overflow: hidden;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+            header .topHeader p:last-child {
+                align-self: center;
+                justify-self: flex-end;
+            }
+
+            header .topHeader p {
+                margin: 20px;
+            }
+
+            header .topHeader span {
+                color: var(--contraste);
+                font-size: 1.5em;
+            }
+    .main {
+        position: relative;
+        top: 0;
+    }
+
+    .pageMobile {
+        padding: 20px 50px 50px 50px;
+    }
+}

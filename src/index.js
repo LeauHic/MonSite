@@ -21,17 +21,20 @@ document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et
  */
 let navWidth = document.querySelector("nav").offsetWidth;
 let body = document.querySelector("body");
+  
+let jeScroll = (media) => {
+    document.querySelector("#width").textContent = window.outerWidth; 
+    if (!media.matches) {
+        stikyHeader();
+        activeNav()
+    }//fin if media.matches
+}; //fin onscroll()
 
-//in case js in turned off
-window.onload = function () {
-    body.classList.remove("stickyHeader");
-};
-
+let media = window.matchMedia("(smax-width: 900px)");
 window.onscroll = function () {
-    stikyHeader();
-    activeNav()
-
+    jeScroll(media);
 };
+media.addListener(jeScroll);
 
 function stikyHeader() {
     let sc = document.documentElement.scrollTop

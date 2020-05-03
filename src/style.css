@@ -19,8 +19,7 @@ strong {
 
 html, body {
     margin: 0;
-    display: flex;
-    flex-flow: column wrap;
+    position: relative;
 }
 
 body {
@@ -550,12 +549,9 @@ footer {
 
 @media only screen and (max-width: 900px) {
 
-    html, body {
-        margin: 0;
+    body {
+        padding-top: 0;
         display: inline-block;
-    }
-    body{
-        padding-top:0;
     }
 
         body.stickyHeader {
@@ -577,31 +573,12 @@ footer {
     }
 
         header .topHeader {
-            display: flex;
-            height: auto;
-            flex-flow: column nowrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-            font-size: 1.2em;
-            margin: 20px;
-            overflow: hidden;
+            margin: 0 20px;
         }
-
-            header .topHeader p:last-child {
-                align-self: center;
-                justify-self: flex-end;
-            }
-
-            header .topHeader p {
-                margin: 20px;
-            }
-
-            header .topHeader span {
-                color: var(--contraste);
-                font-size: 1.5em;
-            }
-
-    .main {
+        header .miniHeader {
+            position: relative;
+        }
+            .main {
         position: relative;
         width: 100%;
         top: 0;
@@ -610,10 +587,5 @@ footer {
     .pageMobile {
         padding: 20px;
         width: 100%;
-    }
-
-    section{
-        display: inline-block;
-        
     }
 }

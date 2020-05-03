@@ -24,7 +24,6 @@ let body = document.querySelector("body");
 let media = window.matchMedia("(max-width: 900px)");
 
 let jeScroll = (media) => {
-    document.querySelector("#width").textContent = window.outerWidth; 
     if (!media.matches) {
         stikyHeader();
         activeNav()
@@ -34,9 +33,9 @@ let jeScroll = (media) => {
     };
 }; //fin onscroll()
 
-media.addListener(jeScroll);
+media.addListener(jeScroll); //En cas de changement de taille de fenêtre
 
-window.onscroll = function () {
+window.onscroll = function () { //en cas de scroll sur la page
     jeScroll(media);
 };
 

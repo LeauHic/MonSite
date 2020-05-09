@@ -252,17 +252,17 @@
             <section id="contact">
                 <h1>RENCONTRONS-NOUS !</h1>
                 <article>
-                    <form action="./src/traitement.php" method="post">
+                    <form>
                         <div class="inputContainer">
-                            <input type="text" id="firstName" name="firstName" value="" required />
+                            <input type="text" id="firstName" name="firstName" value="" pattern="^[aA-zZ éèïöüëäà,.'-]+$" required />
                             <label>Prenom*</label>
                         </div>
                         <div class="inputContainer">
-                            <input type="text" id="familyName" name="familyName" value="" required />
+                            <input type="text" id="familyName" name="familyName" value="" pattern="^[aA-zZ éèïöüëäà,.'-]+$" required />
                             <label>Nom*</label>
                         </div>
                         <div class="inputContainer">
-                            <input type="tel" id="phone" name="phone" value="" required />
+                            <input type="tel" id="phone" name="phone" value="" pattern="^[0-9 ()+'-]+$" required />
                             <label>Téléphone</label>
                         </div>
                         <div class="inputContainer">
@@ -275,7 +275,7 @@
                         </div>
 
                         <div class="bouttonForm">
-                            <input type="submit" value="Envoyer" />
+                            <input id="envoi" type="submit" value="Envoyer" />
                             <input type="reset" value="Tout effacer" />
                         </div>
                     </form>
@@ -295,6 +295,9 @@
             </p>
         </footer>
     </div>
+    <!--import Jquery pour le formulaire de contact-->
+    <script>https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js</script>
+    <!--Appel du script-->
     <script src="src/index.js"></script>
 </body>
 </html>

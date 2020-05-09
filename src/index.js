@@ -75,7 +75,7 @@ function activeNav() {
 #### AFFICHAGE DE LA PARTIE CREATION ####
  */
 
-let slideIndex = [1, 1, 1,1]; //Index de départ des deux slide show
+let slideIndex = [1, 1, 1, 1]; //Index de départ des deux slide show
 let slideId = ["slides1", "slides2", "slides3", "slides4"] //Array regroupant les nom de classes des slideshows
 showSlides(1, 0); //Affiche la première image du slideshow 1
 showSlides(1, 1);//Affiche la première image du slideshow 2
@@ -104,7 +104,7 @@ let mission = document.querySelectorAll(".mission")
 let missionDescription = document.querySelectorAll(".missionDescription") //Nom de la mission du .timeline
 let dateFormation = document.querySelectorAll(".date") //Nom de la mission du .timeline
 let textPanelHistogramme = document.querySelectorAll(".textePanelHistogramme"); // Description de la mission active
-let index = mission.length-1; 
+let index = mission.length - 1;
 
 const timelineAnimation = (index) => {
     /*Fonction parcourant les différents élement de .timeline et de .panelHistogramme
@@ -136,7 +136,7 @@ const timelineAnimation = (index) => {
 
 
 //Affichage de la mission en cours à la chargement de la page
-window.addEventListener('DOMContentLoaded', () =>{
+window.addEventListener('DOMContentLoaded', () => {
     timelineAnimation(index);
 });
 
@@ -156,7 +156,7 @@ parcoursBefore.addEventListener("click", function () {
 
 //Gestion de la flèche next
 parcoursNext.addEventListener("click", function () {
-   (index < mission.length-1)? index++ : index;
+    (index < mission.length - 1) ? index++ : index;
     timelineAnimation(index);
 });
 
@@ -200,3 +200,33 @@ for (let i = 0; i < titreFormation.length; i++) {
     }); // Fin callback
 };
 
+
+/*
+#### GESTION DU FORMULAIRE DE CONTACT ####
+ */
+$(document).ready(function () {
+
+    let $firstName = $('#firstName');
+    let $familyName = $('#familyName');
+    let $phone = $('#phone');
+    let $email = $('#emailAddress');
+    let $message = $('#message');
+
+    $envoi.click(function (e) {
+        e.preventDefault(); // on annule la fonction par défaut du bouton d'envoi
+
+        $.post(
+            'traitement.php',
+            {
+                firstName: $firstName.val(),
+                familyName: $familyName.val(),
+                phone: $phone.val(),
+                emailAddress: $email.val(),
+                message: $message.val()
+            }
+        ),
+            function (data) {
+                alert(data);
+            };
+    });
+});

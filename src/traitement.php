@@ -1,32 +1,64 @@
 <?php
 
+/*Fonction de traitement des inputs pour éviter les attaques basiques*/
+function verif($input){
+    $input = trim($input);
+    $input = htmlspecialchars($input);
+    return $input;
+};
+
+/*Définition de regex de vérification*/
+$regexNom = "/^[aA-zZ éèïöüëäà,.'-]+$/";
+
 /* Récupération des informations du formulaire*/
 
- $nom = trim($_POST['familyName']);
- $prenom = trim($_POST['firstName']);
- $telephone = trim($_POST['phone']);
- $email = trim($_POST['emailAddress']);
- $message = trim($_POST['message']);
+ $nom = verif($_POST['familyName']);
+ $prenom = verif($_POST['firstName']);
+ $telephone = verif($_POST['phone']);
+ $email = verif($_POST['emailAddress']);
+ $message = verif($_POST['message']);
+ $error = "";
 
-/*Envoi du mail*/
+ /*vérification des champs nom et prénom*/
+if (!preg_match($regexNom, $nom)){
+    $error = "Ne vous vexer pas mais votre \"Nom\" n\'est pas considéré comme valide \n";
+};
 
-/*Le destinataire*/
-$to="loickbrouard@yahoo.fr";
+if (!preg_match($regexNom, $prenom)){
+    $error = "Oups, votre prénom ne répond pas aux critères \"normaux\" \n";
+};
 
-/*Le sujet du message qui apparaitra*/
-$sujet="Demande de contact depuis site loickbrouard";
-/*Le message en lui même*/
-/*$msg = 'Mail envoye depuis le site' "rnrn";*/
-$msg = '';
-$msg .= $nom;
-$msg .= $prenom;
-$msg .= $telephone;
-$msg .= $email;
-$msg .= $message;
+ /*Vérifiaction email*/
+ if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+     $error = "Je ne suis pas sur de pouvoir vous recontacter avec une telle addresse email... \n";
+ };
 
-/*Les en-têtes du mail*/
-$headers = 'From: Message de ton site !!';
-/*L'envoi du mail - Et page de redirection*/
-mail($to, $sujet, $msg, $headers);
-header('Location:http://loickbrouard.alwaysdata.net');
+ /*Vérifiaction du message*/
+ if (!strlen($message)>0){
+     $error = "Vous ne souhaitez pas me laisser de message ? :( \n";
+ }
+
+ /*S'il y a eu une erreur elle est renvoyée à l'utilisateur*/
+ if ($error){
+	echo $error;
+}
+/*S'il n'y a pas eu d'erreurs, le message est envoyé*/
+else{
+    /*Paramètre de l'email */
+    $to="loickbrouard@yahoo.fr";
+    $headers = 'From: Message de ton site !!';
+    $sujet="Demande de contact depuis site loickbrouard";
+
+    $msg = "
+    Nom : $nom \n
+    Prénom : $prenom\n
+    Téléphone : $telephone\n
+    Email : $email\n
+    Message : $message\n
+    ";
+
+    /*L'envoi du mail - Et page de redirection*/
+    mail($to, $sujet, $msg, $headers);
+    echo "Votre email à bien été envoyé, mserci à vous !";
+}
 ?>

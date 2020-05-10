@@ -25,6 +25,18 @@
     font-family: QuickSand, Verdana;
 }
 
+p, li{
+    font-size: 1em;
+}
+
+h1{
+    font-size:2em;
+}
+
+h2{
+    font-size: 1.2em;
+}
+
 strong {
     font-weight: bold;
 }
@@ -54,7 +66,7 @@ html, body {
     HEADERS
 */
 
-        header, header .miniHeader, nav, body.stickyHeader header {
+        header, header .miniHeader, nav, body.stickyHeader header, .main .topHeaderMobile {
             background: url("../img/background.jpg");
             background-repeat: no-repeat;
             background-size: auto;
@@ -65,7 +77,6 @@ header {
     height: 800px;
     z-index: 10;
     color: white;
-
     text-align: center;
     position: relative;
     position: fixed;
@@ -118,7 +129,6 @@ header {
 
     header .miniHeader {
         position: absolute;
-        font-size: 1em;
         font-weight: bold;
         bottom: 0;
         display: flex;
@@ -192,7 +202,6 @@ nav {
     position: fixed;
     top: 0px;
     left: 0;
-    font-size: 0.8em;
     font-weight: bold;
     width: 130px;
     height: 100%;
@@ -206,7 +215,6 @@ nav {
 
     nav a {
         margin: -100px 0;
-        font-size: 1.3em;
         color: white;
         text-decoration: none;
     }
@@ -237,7 +245,6 @@ nav {
 section h1 {
     text-align: left;
     font-weight: bold;
-    font-size: 2em;
     color: white;
     padding: 70px 0 30px 30px;
     margin: 0px 0 0px 0;
@@ -268,7 +275,7 @@ section article{
     background: rgba(255, 255, 255, 0.8);
     margin: auto;
     width: 1000px;
-    height: auto;
+    height: 500px;
     border-radius: 30px;
     margin: 10px;
     box-shadow: 5px 5px 5px black;
@@ -279,7 +286,7 @@ section article{
         padding-top: 20px;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-start;
 
     }
@@ -287,7 +294,7 @@ section article{
     .slideshowContainer .slide h1 {
         position: absolute;
         top: 20px;
-        font-size: 2vw;
+        font-size: 2em;
         color: white;
         font-weight: bold;
         padding: 0px;
@@ -299,7 +306,6 @@ section article{
         margin: 20px 50px;
         display: flex;
         flex-flow: column wrap;
-        font-size: 1.5vw;
     } 
         
 .slideshowContainer img {
@@ -394,7 +400,7 @@ section article{
 
 .mission {
     cursor: pointer;
-    font-size: 1.2vw;
+    font-size: 1.2em;
 }
 
 .missionDescription {
@@ -473,7 +479,7 @@ section article{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    font-size: 1.2vw;
+    font-size: 1.2em;
 }
 
 .titreFormation {
@@ -484,7 +490,7 @@ section article{
 
 .boutonFormation {
     background: none;
-    font-size: 1.2vw;
+    font-size: 1.2em;
     font-weight: bold;
     color: var(--dark);
     cursor: pointer;
@@ -561,7 +567,7 @@ section article{
     #contact article {
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     padding: 0 40px;
 }
@@ -644,12 +650,13 @@ form .bouttonForm input {
 #contact .auRevoir {
     background: white;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 1.2em;
     flex-grow: 1;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     max-width: 500px;
-    padding: 40px;
+    padding: 0 40px;
+    margin: 0 10% 0 0;
     text-align: center;
 }
     #contact .auRevoir ul, .auRevoir p:nth-child(2) {
@@ -676,10 +683,20 @@ footer {
     }
 
 @media only screen and (max-width: 900px) {
+    p, li {
+        font-size: 2vw;
+    }
+
+    h1 {
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
 
     body {
         padding-top: 0;
-        display: inline-block;
     }
 
         body.stickyHeader {
@@ -714,23 +731,18 @@ footer {
 
     .main {
         position: relative;
-        width: 100%;
-        top: 0;
+        top: 30px;
     }
 
 
         .main .topHeaderMobile {
-            background: url("../img/background.jpg");
-            background-repeat: no-repeat;
-            background-size: auto;
-            color: white;
             display: flex;
-            height: auto;
+            color: white;
             flex-flow: column nowrap;
             justify-content: center;
-            align-items: center;
-            font-size: 1.2em;
-            padding: 100px 20px 80px 20px;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 20px;
             overflow: hidden;
             font-weight: 100;
         }
@@ -764,5 +776,19 @@ footer {
 
     .pageMobile {
         margin-left: 0;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .missionDescription {
+        margin: 0;
+    }
+
+    .boutonFormation {
+        font-size: 2vw;
+    }
+
+    #formations article{
+        flex-direction: column-reverse;
     }
 }

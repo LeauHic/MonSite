@@ -34,7 +34,7 @@ age();
 /*
 #### GESTION ANIMATION HEADER ####
  */
-let navWidth = document.querySelector("nav").offsetWidth;
+
 let body = document.querySelector("body");
 let media = window.matchMedia("(max-width: 900px)");
 

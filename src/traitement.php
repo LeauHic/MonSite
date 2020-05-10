@@ -9,6 +9,8 @@ function verif($input){
 
 /*Définition de regex de vérification*/
 $regexNom = "/^[aA-zZ éèïöüëäà,.'-]+$/";
+$regexPhone = "/^[0-9 ()+'-]*$/";
+
 
 /* Récupération des informations du formulaire*/
 
@@ -21,21 +23,25 @@ $regexNom = "/^[aA-zZ éèïöüëäà,.'-]+$/";
 
  /*vérification des champs nom et prénom*/
 if (!preg_match($regexNom, $nom)){
-    $error = "Ne vous vexer pas mais votre \"Nom\" n\'est pas considéré comme valide \n";
+    $error .= "Ne vous vexez pas mais votre \"Nom\" n'est pas considere comme valide \n";
 };
 
 if (!preg_match($regexNom, $prenom)){
-    $error = "Oups, votre prénom ne répond pas aux critères \"normaux\" \n";
+    $error .= "Oups, votre prenom ne repond pas aux criteres \"normaux\" \n";
+};
+
+if (!preg_match($regexPhone, $telephone)){
+    $error .= "Le numero de telephone n'est obligatoire mais si vous le remplissez essayer de le faire avec des chiffres";
 };
 
  /*Vérifiaction email*/
  if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-     $error = "Je ne suis pas sur de pouvoir vous recontacter avec une telle addresse email... \n";
+     $error .= "Je ne suis pas sur de pouvoir vous recontacter avec une telle addresse email... \n";
  };
 
  /*Vérifiaction du message*/
  if (!strlen($message)>0){
-     $error = "Vous ne souhaitez pas me laisser de message ? :( \n";
+     $error .= "Vous ne souhaitez pas me laisser de message ? :( \n";
  }
 
  /*S'il y a eu une erreur elle est renvoyée à l'utilisateur*/
@@ -45,8 +51,10 @@ if (!preg_match($regexNom, $prenom)){
 /*S'il n'y a pas eu d'erreurs, le message est envoyé*/
 else{
     /*Paramètre de l'email */
-    $to="loickbrouard@yahoo.fr";
-    $headers = 'From: Message de ton site !!';
+    $to="loickbrouard@alwaysdata.net";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers = 'From: Message de ton site !!' . "\r\n";
+    $headers .= 'Cc: loickbrouard@yahoo.fr' . "\r\n";
     $sujet="Demande de contact depuis site loickbrouard";
 
     $msg = "
@@ -59,6 +67,6 @@ else{
 
     /*L'envoi du mail - Et page de redirection*/
     mail($to, $sujet, $msg, $headers);
-    echo "Votre email à bien été envoyé, mserci à vous !";
+    echo "Votre email a bien ete envoye, merci a vous !";
 }
 ?>

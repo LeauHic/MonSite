@@ -12,22 +12,24 @@
 <body>
     <header>
         <div class="topHeader">
-            <h1>BIENVENUE</h1>
-            <p>Je suis Loïck Brouard, aspirant développeur informatique.</p>
+            <h1><span>BON</span>JOUR</h1>
             <p>
-                Ingénieur emballage et conditionnement pendant 5ans j'ai décidé de sauter le pas et de suivre le lapin blanc. <img src="./img/rabbit.svg" style="height:30px; width:auto" alt="Rabbit" title="Celui là s'appelle matrix !" />
+                Je suis Loïck Brouard, <span>aspirant développeur informatique</span>.<br />
+                Ex-ingénieur emballage et conditionnement (5 ans de service)<br />
+                J'ai décidé de sauter le pas et de suivre le lapin blanc. <img src="./img/rabbit.svg" style="height:60px; width:auto" alt="Rabbit" title="Neo " />
             </p>
             <p>
-                <span>&#9829; </span> --> La POO, un code bien commenté, la logique, le flan et les blagues absurdes.</p>
+                L<span>A</span> POO, un code b<span>I</span>en co<span>M</span>m<span>E</span>nté, la logique, le flan et les blagues absurdes.
+            </p>
             <p>
-                <span>&#33;&#9829; </span> --> Me battre avec du CSS, les emissions de télé-réalité, m'ennuyer
+                <br /><br />
+                <span>N</span>e rien f<span>AI</span>re, les e<span>M</span>issions d<span>E</span> télé-réalité, les débats <span>P</span>olitiques , me battre <span>A</span>vec du C<span>S</span>S
                 <br />
             </p>
-            <p>\/----------------------------- Pour la suite, c'est plus bas -----------------------------\/</p>
         </div>
         <div class="miniHeader">
             <h1>LOÏCK BROUARD</h1>
-            <p>Alternant Développeur informatique, <span id="age"></span><span id="width"></span></p>
+            <p>Alternant Développeur informatique<br />   <span id="age"></span></p>
             <div class="reseaux">
                 <a id="github" href="https://github.com/LeauHic" target="_blank"><img src="img/github.svg" alt="gitHub" title="Les projets finis et en cours" /></a>
                 <a id="linkedin" href="https://www.linkedin.com/in/lo%C3%AFck-brouard-489ba795/" target="_blank"><img src="img/linkedin.svg" alt="linkedIn" title="Connectons-nous !" /></a>
@@ -36,6 +38,22 @@
         </div>
     </header>
     <div class="main">
+        <div class="topHeaderMobile">
+            <h1><span>BON</span>JOUR</h1>
+            <p>
+                Je suis Loïck Brouard, <span>aspirant développeur informatique</span>.<br />
+                Ex-ingénieur emballage et conditionnement (5 ans de service)<br />
+                J'ai décidé de sauter le pas et de suivre le lapin blanc. <img src="./img/rabbit.svg" style="height:60px; width:auto" alt="Rabbit" title="Neo " />
+            </p>
+            <p>
+                L<span>A</span> POO, un code b<span>I</span>en co<span>M</span>m<span>E</span>nté, la logique, le flan et les blagues absurdes.
+            </p>
+            <p>
+                <br /><br />
+                <span>N</span>e rien f<span>AI</span>re, les e<span>M</span>issions d<span>E</span> télé-réalité, les débats <span>P</span>olitiques , me battre <span>A</span>vec du C<span>S</span>S
+                <br />
+            </p>
+        </div>
         <nav>
             <a class="menu" href="#creation">Créations</a>
             <a class="menu" href="#parcours">Parcours</a>
@@ -46,69 +64,106 @@
             <section id="creation">
                 <h1>MES CREATIONS</h1>
                 <article>
-                    <!-- 3eme slideshow-->
                     <div class="slideshowContainer">
-                        <div class="slides3">
-                            <a href="./app/labyrinthePython.zip"><img src="./img/labyrinthePython.png" alt="Labyrinthe / Python" title="Labyrinthe en python"></a>
-                        </div>
-                        <div class="slides3">
-                            <h2>Description</h2>
-                            <p>Jeu de labyrinthe format console, avec editeur de carte sur notepad</p>
-                            <h2>Environnement de développement</h2>
-                            <p>
-                                Language : Python<br />
-                                Editeur texte : SublimeText<br />
-                                Interpréteur : PythonShell<br />
-                                Support : MOOC OpenClassRoom
-                            </p>
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-                    </div>
-                    <!-- 2eme slideshow-->
-                    <div class="slideshowContainer">
-                        <div class="slides2">
-                            <a href="./app/ChiffreMystere.zip"><img src="./img/chiffreMystere.png" alt="Chiffre Mystère / C#" title="Nombre mystère en mode fenêtré"></a>
-                        </div>
-                        <div class="slides2">
-                            <h2>Description</h2>
-                            <p>Jeu où l'on doit retrouver un nombre entre 1 et 20 généré par le jeu</p>
-                            <h2>Environnement de développement</h2>
-                            <p>
-                                Language : C#<br />
-                                IDLE : Visual Studio / Blend<br />
-                                Support : MOOC OpenClassRoom
-                            </p>
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-                    </div>
-                    <!-- 1er slideshow-->
-                    <div class="slideshowContainer">
-                        <div class="slides1">
-                            <img src="./img/website.png" alt="Site Web / HTML CSS JavaScript PHP" title="C'est ce site ! Fractal, n'est-il pas ?">
-                        </div>
-                        <div class="slides1">
-                            <h2>Description</h2>
-                            <p>Site internet de présentation</p>
-                            <h2>Environnement de développement</h2>
-                            <p>
-                                Language : HTML / CSS / JavaScript / Node.Js / Webpack<br />
-                                IDLE : Visual Studio<br />
-                                Support : Multiples
-                            </p>
-                        </div>
+                        <div class="slide">
+                            <h1>LE LABYRINTHE</h1>
+                            <div>
 
+                                <h2>Description</h2>
+                                <p>Jeu de labyrinthe très basique format console. Possibilité de créer et éditer ses cartes avec le bloc-note.</p>
+                                <h2>Environnement de développement</h2>
+                                <p>
+                                    Language : Python<br />
+                                    Editeur texte : SublimeText<br />
+                                    Interpréteur : PythonShell<br />
+                                    Support : MOOC OpenClassRoom
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Utilisation</h2>
+                                <p>
+                                    <ol>
+                                        <li>
+                                            télécharger le fichier zip
+                                        </li>
+                                        <li>
+                                            Lancer le fichier *.exe
+                                        </li>
+                                        <li>
+                                            Il se peut que l'executable ne soit pas compatible avec macOs
+                                        </li>
+                                    </ol>
+                                </p>
+                                <a href="./app/labyrinthePython.zip"><img src="./img/exe.svg" alt="Téléchargement" title="Dézipper moi ! Mais pas trop vite... !" /></a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <h1>LE SITE INTERNET</h1>
+                            <div>
+
+                                <h2>Description</h2>
+                                <p>Site internet de présentation</p>
+                                <h2>Environnement de développement</h2>
+                                <p>
+                                    Languages : HTML / CSS / JavaScript / JQuery<br />
+                                    IDLE : Visual Studio<br />
+                                    Support : Multiples
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Utilisation</h2>
+                                <p>
+                                    <ol>
+                                        <li>
+                                            Presser la touche F12 pour accéder à l'explorateur de code
+                                        </li>
+                                    </ol>
+                                </p>
+                                <a onclick="alert('Vous etes arrivé ! C\'est ici meme :)')"><img src="./img/exe.svg" alt="Téléchargement" title="Ne cliquez pas c'est un piège !" /></a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <h1>LE NOMBRE MYSTERE</h1>
+                            <div>
+
+                                <h2>Description</h2>
+                                <p>Jeu où l'on doit retrouver un nombre entre 1 et 20 généré par le jeu (Le juste prix en ultra-simple... et sans prix à la fin...)</p>
+                                <h2>Environnement de développement</h2>
+                                <p>
+                                    Language : C#<br />
+                                    IDLE : Visual Studio / Blend<br />
+                                    Support : MOOC OpenClassRoom
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Utilisation</h2>
+                                <p>
+                                    <ol>
+                                        <li>
+                                            télécharger le fichier zip
+                                        </li>
+                                        <li>
+                                            Lancer le fichier *.exe
+                                        </li>
+                                        <li>
+                                            Il se peut que l'executable ne soit pas compatible avec macOs
+                                        </li>
+                                    </ol>
+                                </p>
+                                <a href="./app/ChiffreMystere.zip"><img src="./img/exe.svg" alt="Téléchargement" title="Dézipper moi... Mais pas tout de suite..." /></a>
+                            </div>
+                        </div>
                         <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
                     </div>
                 </article>
             </section>
+
             <section id="parcours">
                 <h1>PARCOURS</h1>
                 <article>
                     <div class="timeline">
-                        <button class="timelineBefore"><img class="arrow" src="img/arrow.svg" alt="arrow" /></button>
+                        <button class="timelineBefore"><img class="arrow" src="img/arrow-01.png" alt="arrow" /></button>
                         <ul>
                             <li class="mission complete">
                                 <div class="missionDescription">
@@ -152,7 +207,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <button class="timelineNext"><img class="arrow" src="img/arrow.svg" alt="arrow" /></button>
+                        <button class="timelineNext"><img class="arrow" src="img/arrow-01.png" alt="arrow" /></button>
                     </div>
                     <div class="panelHistogramme">
 
@@ -187,7 +242,7 @@
                 <article>
                     <div class="accordeon">
                         <div class="titreFormation">
-                            <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                            <img class="arrow" src="img/arrow.png" alt="arrow" />
                             <button class="boutonFormation">[En cours] Titre de niveau III Développeur informatique</button>
                         </div>
                         <div class="panelAccordeon">
@@ -202,7 +257,7 @@
                             </ul>
                         </div>
                         <div class="titreFormation">
-                            <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                            <img class="arrow" src="img/arrow.png" alt="arrow" />
                             <button class="boutonFormation">Ingénieur Emballage et Conditionnement</button>
                         </div>
                         <div class="panelAccordeon">
@@ -217,7 +272,7 @@
                             </ul>
                         </div>
                         <div class="titreFormation">
-                            <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                            <img class="arrow" src="img/arrow.png" alt="arrow" />
                             <button class="boutonFormation">DUT Chimie</button>
                         </div>
                         <div class="panelAccordeon">
@@ -231,7 +286,7 @@
                             </ul>
                         </div>
                         <div class="titreFormation">
-                            <img class="arrow" src="img/arrow.svg" alt="arrow" />
+                            <img class="arrow" src="img/arrow.png" alt="arrow" />
                             <button class="boutonFormation">Baccalauréat scientifique</button>
                         </div>
                         <div class="panelAccordeon">
@@ -262,7 +317,7 @@
                             <label>Nom*</label>
                         </div>
                         <div class="inputContainer">
-                            <input type="tel" id="phone" name="phone" value="" pattern="^[0-9 ()+'-]+$" required />
+                            <input type="tel" id="phone" name="phone" value="" pattern="^[0-9 ()+'-]*$" required />
                             <label>Téléphone</label>
                         </div>
                         <div class="inputContainer">
@@ -279,24 +334,42 @@
                             <input type="reset" value="Tout effacer" />
                         </div>
                     </form>
-                    <img src="img/chat.jpg" alt="Discutons" title="&#34;Conservons&#34; le contact" />
+                    <div class="auRevoir">
+                        <p>
+                            Merci d'avoir pris le temps d'arriver jusqu'ici!<br /><br />
+                        </p>
+                        <p>
+                            N'hésitez par à me laisser un message si :
+                            <ul>
+                                <li>
+                                    Ce site vous à plu
+                                </li>
+                                <li>
+                                    Vous souhaitez discuter de choses et d'autres
+                                </li>
+                                <li>
+                                    Vous avez une proposition pour un super travail dans une équipe sympa
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <!--<img src="img/chat.jpg" alt="Discutons" title="&#34;Conservons&#34; le contact" />-->
                 </article>
             </section>
+            <footer>
+                <p class="wink">
+                    "Et n'oubliez surtout pas qu'un clavier azerty en vaut deux"
+                </p>
+                <p>
+                    Site créé par mes soins avec sueurs, <!--<a href="./src/ressources.html">-->ressources<!--</a>--> et amour en HTML5/CSS3/JS
+                    et hébergé par <a href="https://www.alwaysdata.com/">AlwaysData</a>
+                </p>
+            </footer>
         </div>
-        <footer>
-            <p class="wink">
-                Merci d'avoir pris le temps d'arriver jusqu'ici,
-                si cela vous a plu, que vous souhaitez discuter ou me proposer un super travail dans une équipe sympa n'hésitez par à remonter un tout petit peu et me laisser un
-                message dans la partie contact ;)
-            </p>
-            <p>
-                Site créé par mes soins avec sueurs, <!--<a href="./src/ressources.html">-->ressources<!--</a>--> et amour en HTML5/CSS3/JS
-                et hébergé par <a href="https://www.alwaysdata.com/">AlwaysData</a>
-            </p>
-        </footer>
+
     </div>
     <!--import Jquery pour le formulaire de contact-->
-    <script>https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <!--Appel du script-->
     <script src="src/index.js"></script>
 </body>

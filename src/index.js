@@ -3,18 +3,33 @@
  #### AFFICHAGE AGE ####
  */
 
-/*Fonction permettant de determiner mon age en fonction de la date du jour*/
-//Instanciation de l'objet date et récupération du jour, moi et annee actuelle
-let date = Date.now();
-let anniv = Date.parse("14 May 1991 23:00");
-let ageEnJour = (date - anniv) / 3600 / 1000 / 24;
-let ageEnAnnee = ageEnJour / 365.24;
-ageEnAnnee = Math.floor(ageEnAnnee);
-let mois = Math.floor((ageEnJour - ageEnAnnee * 365.24) / 30.4375);
-let jour = Math.floor((ageEnJour - ageEnAnnee * 365.24) % 30.4375);
+function age() {
 
-//attribution au div "age" de l'age calculé
-document.querySelector("#age").textContent = `${ageEnAnnee} ans (${mois} mois et ${jour} jours...)`;
+    /*Fonction permettant de determiner mon age en fonction de la date du jour*/
+    //Instanciation de l'objet date et récupération du jour, moi et annee actuelle
+    let date = Date.now();
+    let anniv = Date.parse("14 May 1991 23:00");
+    let ageEnJour = (date - anniv) / 3600 / 1000 / 24;
+    let ageEnAnnee = ageEnJour / 365.24;
+    let mois = (ageEnJour - Math.floor(ageEnAnnee) * 365.24) / 30.4375;
+    let jour = (ageEnJour - Math.floor(ageEnAnnee) * 365.24) % 30.4375;
+    let heure = (ageEnJour - Math.floor(ageEnJour)) * 24;
+    let minute = (heure - Math.floor(heure)) * 60;
+    let seconde = (minute - Math.floor(minute)) * 60;
+
+    //Appel de la fonction toute les secondes
+    setTimeout("age()", 1000);
+
+    //attribution au div "age" de l'age calculé
+    document.querySelector("#age").innerHTML =
+        `${Math.floor(ageEnAnnee)} ans, ${Math.floor(mois)} mois, ${Math.floor(jour)} jours, ${Math.floor(heure)}
+heures, ${Math.floor(minute)} minutes et ${Math.floor(seconde)} secondes (à peu près...)`;
+    
+}
+
+age();
+
+
 
 /*
 #### GESTION ANIMATION HEADER ####
@@ -75,24 +90,22 @@ function activeNav() {
 #### AFFICHAGE DE LA PARTIE CREATION ####
  */
 
-let slideIndex = [1, 1, 1, 1]; //Index de départ des deux slide show
-let slideId = ["slides1", "slides2", "slides3", "slides4"] //Array regroupant les nom de classes des slideshows
-showSlides(1, 0); //Affiche la première image du slideshow 1
-showSlides(1, 1);//Affiche la première image du slideshow 2
-showSlides(1, 2);//Affiche la première image du slideshow 3
+let slideIndex = [1]; //Index de départ du slide show
+let slideId = ["slide"] //Array regroupant les nom de classes
+showSlides(0, 0); //Affiche la première image du slideshow 1s
 
 function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
 }
 
 function showSlides(n, no) {
-    let slideshowSelected = document.getElementsByClassName(slideId[no]);
+    let slideshowSelected = document.getElementsByClassName("slide");
     if (n > slideshowSelected.length) { slideIndex[no] = 1 }
     if (n < 1) { slideIndex[no] = slideshowSelected.length }
     for (let i = 0; i < slideshowSelected.length; i++) {
         slideshowSelected[i].style.display = "none";
     }
-    slideshowSelected[slideIndex[no] - 1].style.display = "block";
+    slideshowSelected[slideIndex[no] - 1].style.display = "flex";
 }
 
 /*
@@ -212,21 +225,20 @@ $(document).ready(function () {
     let $email = $('#emailAddress');
     let $message = $('#message');
 
-    $envoi.click(function (e) {
+    $("#envoi").click(function (e) {
         e.preventDefault(); // on annule la fonction par défaut du bouton d'envoi
 
         $.post(
-            'traitement.php',
+            './src/traitement.php',
             {
                 firstName: $firstName.val(),
                 familyName: $familyName.val(),
                 phone: $phone.val(),
                 emailAddress: $email.val(),
                 message: $message.val()
-            }
-        ),
+            },
             function (data) {
                 alert(data);
-            };
+            });
     });
 });
